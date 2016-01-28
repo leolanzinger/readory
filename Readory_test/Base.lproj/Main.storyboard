@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,8 +25,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-c7-T5b">
+                                <rect key="frame" x="276" y="285" width="46" height="30"/>
+                                <state key="normal" title="Tutorial"/>
+                                <connections>
+                                    <segue destination="hce-jj-sXH" kind="show" id="PPD-54-YiH"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NJA-ko-POv">
-                                <rect key="frame" x="245" y="200" width="103" height="168"/>
+                                <rect key="frame" x="245" y="199" width="103" height="168"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czd-f6-hBZ">
                                         <rect key="frame" x="0.0" y="0.0" width="103" height="42"/>
@@ -66,6 +74,8 @@
                         <constraints>
                             <constraint firstItem="NJA-ko-POv" firstAttribute="centerY" secondItem="D3e-Ai-yCU" secondAttribute="centerY" id="NWh-Vs-1HU"/>
                             <constraint firstItem="NJA-ko-POv" firstAttribute="centerX" secondItem="D3e-Ai-yCU" secondAttribute="centerX" id="VtS-8o-dZI"/>
+                            <constraint firstItem="OGe-c7-T5b" firstAttribute="top" secondItem="Hpg-XL-gAZ" secondAttribute="bottom" constant="20" id="lUn-Rr-S8H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OGe-c7-T5b" secondAttribute="trailing" constant="20" id="npY-xt-5Ys"/>
                         </constraints>
                     </view>
                     <connections>
@@ -75,6 +85,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FdF-K0-BpU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944" y="318"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="1zi-Dz-X9w">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="veU-kJ-zfn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jut-oK-P4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="337"/>
+        </scene>
+        <!--On Boarding View Controller-->
+        <scene sceneID="Rkd-gU-RSK">
+            <objects>
+                <viewController id="hce-jj-sXH" customClass="OnBoardingViewController" customModule="Readory_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dEh-IE-WdF"/>
+                        <viewControllerLayoutGuide type="bottom" id="tGH-Gm-oaF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aBt-Cy-4Dz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.36078431370000003" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5U-VK-47u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="-378"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="5O3-by-DR6">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="XK3-d2-IE2" customClass="PageContentViewController" customModule="Readory_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6X-l7-00f"/>
+                        <viewControllerLayoutGuide type="bottom" id="YYb-Ls-55D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gqf-pv-u04">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E19-Y2-5Bv">
+                                <rect key="frame" x="278" y="293" width="44" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb3-hu-UGE">
+                                <rect key="frame" x="178" y="237" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-wV-uDz">
+                                <rect key="frame" x="276" y="285" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Got it!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oQp-vG-Xa9" kind="show" id="ykh-xH-LPQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88627450980392153" green="0.36078431372549019" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hb3-hu-UGE" firstAttribute="centerY" secondItem="gqf-pv-u04" secondAttribute="centerY" id="7Wx-w5-ZgE"/>
+                            <constraint firstItem="Wc1-wV-uDz" firstAttribute="centerY" secondItem="gqf-pv-u04" secondAttribute="centerY" id="8me-TQ-s9Q"/>
+                            <constraint firstItem="Hb3-hu-UGE" firstAttribute="centerX" secondItem="gqf-pv-u04" secondAttribute="centerX" id="HW8-D5-Gek"/>
+                            <constraint firstItem="E19-Y2-5Bv" firstAttribute="top" secondItem="f6X-l7-00f" secondAttribute="bottom" constant="80" id="Wwm-eg-3We"/>
+                            <constraint firstItem="E19-Y2-5Bv" firstAttribute="centerX" secondItem="gqf-pv-u04" secondAttribute="centerX" id="ej5-hb-A5c"/>
+                            <constraint firstItem="Wc1-wV-uDz" firstAttribute="centerX" secondItem="gqf-pv-u04" secondAttribute="centerX" id="tLK-hZ-Jba"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="okButton" destination="Wc1-wV-uDz" id="7Hq-K1-wch"/>
+                        <outlet property="onBoardingImage" destination="Hb3-hu-UGE" id="Faw-3i-VbE"/>
+                        <outlet property="onBoardingLabel" destination="E19-Y2-5Bv" id="wiK-Ta-d8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUC-BQ-NPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="1076"/>
         </scene>
         <!--Turn View Controller-->
         <scene sceneID="JtH-Vv-d7I">
@@ -276,6 +364,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="XP3-gX-H60"/>
+        <segue reference="ykh-xH-LPQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

@@ -11,6 +11,8 @@
 		B35FA6DF1C591A3D00525812 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6DE1C591A3D00525812 /* Turn.swift */; };
 		B35FA6E41C5A36C200525812 /* GameFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */; };
 		B35FA6E51C5A3AEA00525812 /* TurnSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E53B41C57ABC9000285B9 /* TurnSuccessViewController.swift */; };
+		B35FA6E71C5A621A00525812 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6E61C5A621A00525812 /* PageContentViewController.swift */; };
+		B35FA6E91C5A683500525812 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6E81C5A683500525812 /* OnBoardingViewController.swift */; };
 		B38E53931C5680A8000285B9 /* VuforiaObject3D.m in Sources */ = {isa = PBXBuildFile; fileRef = B38E53921C5680A8000285B9 /* VuforiaObject3D.m */; };
 		B38E539A1C56814D000285B9 /* SampleApplicationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38E53991C56814D000285B9 /* SampleApplicationUtils.cpp */; };
 		B38E539D1C568183000285B9 /* SampleApplicationShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B38E539C1C568183000285B9 /* SampleApplicationShaderUtils.m */; };
@@ -80,6 +82,8 @@
 		B35FA6DE1C591A3D00525812 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		B35FA6E21C591B7500525812 /* Readory_test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Readory_test-Bridging-Header.h"; sourceTree = "<group>"; };
 		B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFinishedViewController.swift; sourceTree = "<group>"; };
+		B35FA6E61C5A621A00525812 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		B35FA6E81C5A683500525812 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		B38E53911C568093000285B9 /* VuforiaObject3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VuforiaObject3D.h; sourceTree = "<group>"; };
 		B38E53921C5680A8000285B9 /* VuforiaObject3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VuforiaObject3D.m; sourceTree = "<group>"; };
 		B38E53941C5680DC000285B9 /* A_object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A_object.h; sourceTree = "<group>"; };
@@ -253,7 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				B3B58AF61C47ED97007D4B29 /* ViewController.swift */,
+				B35FA6E81C5A683500525812 /* OnBoardingViewController.swift */,
 				B3B58B261C490442007D4B29 /* TurnViewController.swift */,
+				B35FA6E61C5A621A00525812 /* PageContentViewController.swift */,
 				B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */,
 				B38E53B41C57ABC9000285B9 /* TurnSuccessViewController.swift */,
 				B38E53B61C57AC1F000285B9 /* TurnFailViewController.swift */,
@@ -504,6 +510,7 @@
 				B3B58AF71C47ED97007D4B29 /* ViewController.swift in Sources */,
 				B38E539A1C56814D000285B9 /* SampleApplicationUtils.cpp in Sources */,
 				B396CE591C4E441B007D41B3 /* Game.swift in Sources */,
+				B35FA6E91C5A683500525812 /* OnBoardingViewController.swift in Sources */,
 				B3AC8A8E1C511B2000E1B297 /* AppDelegate.m in Sources */,
 				B38E539D1C568183000285B9 /* SampleApplicationShaderUtils.m in Sources */,
 				B38E53931C5680A8000285B9 /* VuforiaObject3D.m in Sources */,
@@ -512,6 +519,7 @@
 				B35FA6DC1C59166D00525812 /* Turn.m in Sources */,
 				B3F3E53E1C4F97F00043764C /* SampleApplicationSession.mm in Sources */,
 				B3AC8ACF1C512D9600E1B297 /* main.m in Sources */,
+				B35FA6E71C5A621A00525812 /* PageContentViewController.swift in Sources */,
 				B3B58B271C490442007D4B29 /* TurnViewController.swift in Sources */,
 				B38E53AA1C568385000285B9 /* Texture.mm in Sources */,
 			);

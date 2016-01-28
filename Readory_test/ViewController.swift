@@ -36,8 +36,10 @@ class ViewController: UIViewController {
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        Game.init()
-        Game.sharedInstance.setPlayers(self.players)
+        if (segue.identifier == "startGame") {
+            Game.init()
+            Game.sharedInstance.setPlayers(self.players)
+        }
     }
     
 }
