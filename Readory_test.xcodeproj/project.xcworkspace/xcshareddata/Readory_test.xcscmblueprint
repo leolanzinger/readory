@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2A231591F6D2C7FB5C71E4C0691989FDCD5752C4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2A231591F6D2C7FB5C71E4C0691989FDCD5752C4" : 0,
+    "73F9DD42211AFF047D5CA1C81DACBB8EE7D3E072" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "01207F83-022B-41AC-BE58-1653AB7C921C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2A231591F6D2C7FB5C71E4C0691989FDCD5752C4" : "Readory_test\/",
+    "73F9DD42211AFF047D5CA1C81DACBB8EE7D3E072" : "..\/DEVELOP\/KWStepper"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Readory_test",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Readory_test.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:leolanzinger\/readory.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2A231591F6D2C7FB5C71E4C0691989FDCD5752C4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kyleweiner\/KWStepper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73F9DD42211AFF047D5CA1C81DACBB8EE7D3E072"
+    }
+  ]
+}

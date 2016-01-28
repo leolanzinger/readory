@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B35FA6DC1C59166D00525812 /* Turn.m in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6DB1C59166D00525812 /* Turn.m */; };
 		B35FA6DF1C591A3D00525812 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6DE1C591A3D00525812 /* Turn.swift */; };
+		B35FA6E41C5A36C200525812 /* GameFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */; };
+		B35FA6E51C5A3AEA00525812 /* TurnSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E53B41C57ABC9000285B9 /* TurnSuccessViewController.swift */; };
 		B38E53931C5680A8000285B9 /* VuforiaObject3D.m in Sources */ = {isa = PBXBuildFile; fileRef = B38E53921C5680A8000285B9 /* VuforiaObject3D.m */; };
 		B38E539A1C56814D000285B9 /* SampleApplicationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38E53991C56814D000285B9 /* SampleApplicationUtils.cpp */; };
 		B38E539D1C568183000285B9 /* SampleApplicationShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B38E539C1C568183000285B9 /* SampleApplicationShaderUtils.m */; };
@@ -22,7 +24,6 @@
 		B38E53B01C577F65000285B9 /* Line.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = B38E53AC1C577F65000285B9 /* Line.vertsh */; };
 		B38E53B11C577F65000285B9 /* Simple.fragsh in Resources */ = {isa = PBXBuildFile; fileRef = B38E53AD1C577F65000285B9 /* Simple.fragsh */; };
 		B38E53B21C577F65000285B9 /* Simple.vertsh in Resources */ = {isa = PBXBuildFile; fileRef = B38E53AE1C577F65000285B9 /* Simple.vertsh */; };
-		B38E53B51C57ABC9000285B9 /* TurnSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E53B41C57ABC9000285B9 /* TurnSuccessViewController.swift */; };
 		B38E53B71C57AC1F000285B9 /* TurnFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E53B61C57AC1F000285B9 /* TurnFailViewController.swift */; };
 		B38E53BA1C582B29000285B9 /* TextureTeapotRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B38E53B91C582B29000285B9 /* TextureTeapotRed.png */; };
 		B396CE591C4E441B007D41B3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396CE581C4E441B007D41B3 /* Game.swift */; };
@@ -78,6 +79,7 @@
 		B35FA6DD1C5917C100525812 /* Turn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Turn.h; sourceTree = "<group>"; };
 		B35FA6DE1C591A3D00525812 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		B35FA6E21C591B7500525812 /* Readory_test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Readory_test-Bridging-Header.h"; sourceTree = "<group>"; };
+		B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFinishedViewController.swift; sourceTree = "<group>"; };
 		B38E53911C568093000285B9 /* VuforiaObject3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VuforiaObject3D.h; sourceTree = "<group>"; };
 		B38E53921C5680A8000285B9 /* VuforiaObject3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VuforiaObject3D.m; sourceTree = "<group>"; };
 		B38E53941C5680DC000285B9 /* A_object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A_object.h; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				B3B58AF61C47ED97007D4B29 /* ViewController.swift */,
 				B3B58B261C490442007D4B29 /* TurnViewController.swift */,
+				B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */,
 				B38E53B41C57ABC9000285B9 /* TurnSuccessViewController.swift */,
 				B38E53B61C57AC1F000285B9 /* TurnFailViewController.swift */,
 				B396CE671C4E5769007D41B3 /* FrameMarkersViewController.h */,
@@ -492,7 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B38E53B51C57ABC9000285B9 /* TurnSuccessViewController.swift in Sources */,
+				B35FA6E51C5A3AEA00525812 /* TurnSuccessViewController.swift in Sources */,
 				B38E539E1C5681AA000285B9 /* Texture.h in Sources */,
 				B3AFFEEA1C5386EE0021E606 /* FrameMarkersViewController.mm in Sources */,
 				B3AFFEE91C5385C30021E606 /* FrameMarkersEAGLView.mm in Sources */,
@@ -505,6 +508,7 @@
 				B38E539D1C568183000285B9 /* SampleApplicationShaderUtils.m in Sources */,
 				B38E53931C5680A8000285B9 /* VuforiaObject3D.m in Sources */,
 				B38E53B71C57AC1F000285B9 /* TurnFailViewController.swift in Sources */,
+				B35FA6E41C5A36C200525812 /* GameFinishedViewController.swift in Sources */,
 				B35FA6DC1C59166D00525812 /* Turn.m in Sources */,
 				B3F3E53E1C4F97F00043764C /* SampleApplicationSession.mm in Sources */,
 				B3AC8ACF1C512D9600E1B297 /* main.m in Sources */,

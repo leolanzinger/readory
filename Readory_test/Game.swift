@@ -16,6 +16,8 @@ public class Game {
     var turn:Int!
     var playingPlayer:Int!
     var score = [Int](count: 6, repeatedValue: 0)
+    var matches:Int!
+    let n_pairs = 5
     
     class var sharedInstance: Game {
         struct Singleton {
@@ -27,6 +29,7 @@ public class Game {
     init() {
         self.turn = 1
         self.playingPlayer = 1
+        self.matches = 0
     }
     
     //  set the number of players that are going to use the game 
@@ -40,9 +43,16 @@ public class Game {
     
     //  perform these two functions after every turn to update
     //  the turn mechanism
-    func turnWon() {
+    func turnWon() -> Bool{
         turn = turn + 1
         score[playingPlayer]++
+        matches = matches + 1
+        if (matches == n_pairs) {
+            return true
+        }
+        else {
+            return false
+        }
     }
     
     func turnLost() {

@@ -119,6 +119,48 @@
             </objects>
             <point key="canvasLocation" x="944" y="1076"/>
         </scene>
+        <!--Game Finished View Controller-->
+        <scene sceneID="d3z-Xs-om6">
+            <objects>
+                <viewController id="vOP-B2-JLF" customClass="GameFinishedViewController" customModule="Readory_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tRY-df-RDX"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Yb-Bm-NJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kT6-7k-uJ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game is completed!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QI-GB-IZs">
+                                <rect key="frame" x="167" y="290" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8QI-GB-IZs" firstAttribute="centerX" secondItem="kT6-7k-uJ1" secondAttribute="centerX" id="BU0-1J-inD"/>
+                            <constraint firstItem="8QI-GB-IZs" firstAttribute="centerY" secondItem="kT6-7k-uJ1" secondAttribute="centerY" id="M3d-G3-cfw"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7gA-Ow-sC0" appends="YES" id="I4B-rQ-cCk"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="gameFinishLabel" destination="8QI-GB-IZs" id="WiS-5K-76q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndA-f5-ro2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7gA-Ow-sC0">
+                    <connections>
+                        <segue destination="oQp-vG-Xa9" kind="show" id="axa-6a-x5s"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="26" y="1777"/>
+        </scene>
         <!--Frame Markers View Controller-->
         <scene sceneID="kTV-zv-qOb">
             <objects>
@@ -165,7 +207,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Go!"/>
                                 <connections>
-                                    <segue destination="bt8-L6-LEU" kind="show" id="B3u-9M-xye"/>
+                                    <action selector="playAgain:" destination="nud-7X-gid" eventType="touchUpInside" id="DMS-qn-CYy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -178,7 +220,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playAgainButton" destination="8mG-Qi-YAx" id="e86-R7-rGc"/>
                         <outlet property="turnLabel" destination="IDT-U9-BOg" id="PzT-U1-h41"/>
+                        <segue destination="vOP-B2-JLF" kind="show" identifier="gameFinished" id="KW7-nI-Jgt"/>
+                        <segue destination="bt8-L6-LEU" kind="show" identifier="playAgainSegue" id="XP3-gX-H60"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VJ-bP-0Bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,7 +275,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GPT-s7-PbU"/>
+        <segue reference="XP3-gX-H60"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>
