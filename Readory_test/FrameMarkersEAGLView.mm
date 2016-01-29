@@ -311,7 +311,7 @@ namespace {
         //NSLog(@"[%d] marker-id tracked", marker.getMarkerId());
         
         // create the 3d object of the hint
-        if (marker.getMarkerId() != firstCard && firstCard != -1) {
+        if (marker.getMarkerId() != firstCard && firstCard != -1 && marker.getMarkerId() > 9) {
             // check if the markerId should be displayed
             if ([turnWrapper checkHint:marker.getMarkerId()]) {
                 // display the hint
