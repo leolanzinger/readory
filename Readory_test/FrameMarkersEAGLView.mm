@@ -55,15 +55,16 @@ namespace {
     
     // Texture filenames
     const char* textureFilenames[] = {
-        "letter_Q.png"/*,
-        "letter_C.png",
+        "letter_Q.png",
+        "letter_C.png"/*,
         "letter_A.png",
         "letter_R.png",
         "TextureTeapotRed.png"*/
     };
     
     FrameMarkersViewController* vc;
-    int firstCard = -1;
+    // initialize a first card id variable to -1
+    int firstCard;
 
 }
 
@@ -140,6 +141,9 @@ namespace {
         
         // init the turn object
         turnWrapper = [[TurnWrapper alloc]init];
+        
+        // set the first card to -1
+        firstCard = -1;
     }
     
     return self;
@@ -206,9 +210,9 @@ namespace {
     
     [self add3DObjectWith:NUM_Q_OBJECT_VERTEX ofVertices:QobjectVertices normals:QobjectNormals texcoords:QobjectTexCoords
                      with:NUM_Q_OBJECT_INDEX ofIndices:QobjectIndices usingTextureIndex:0];
-    /*
+    
     [self add3DObjectWith:NUM_C_OBJECT_VERTEX ofVertices:CobjectVertices normals:CobjectNormals texcoords:CobjectTexCoords
-                     with:NUM_C_OBJECT_INDEX ofIndices:CobjectIndices usingTextureIndex:1];
+                     with:NUM_C_OBJECT_INDEX ofIndices:CobjectIndices usingTextureIndex:1]; /*
     
     [self add3DObjectWith:NUM_A_OBJECT_VERTEX ofVertices:AobjectVertices normals:AobjectNormals texcoords:AobjectTexCoords
                      with:NUM_A_OBJECT_INDEX ofIndices:AobjectIndices usingTextureIndex:2];
@@ -278,71 +282,79 @@ namespace {
             NSLog(@"[%s] tracked with target out of view!", marker.getName());
         }
         
-        
-        // Choose the object and texture based on the marker ID
-        //int textureIndex = marker.getMarkerId();
-        //NSLog(@"[%d] marker-id tracked", marker.getMarkerId());
-        
-        //  create the 3d object of the front card flipped
-        if (marker.getMarkerId() == firstCard ) {
-            VuforiaObject3D *obj3D = [objects3D objectAtIndex:0];
-            
-            // Render with OpenGL 2
-            QCAR::Matrix44F modelViewProjection;
-            if (isFrontCamera) {
-                SampleApplicationUtils::scalePoseMatrix(-1, 1, 1, &modelViewMatrix.data[0]);
-            }
-            SampleApplicationUtils::translatePoseMatrix(-kLetterTranslate, -kLetterTranslate, 0.f, &modelViewMatrix.data[0]);
-            SampleApplicationUtils::scalePoseMatrix(kLetterScale, kLetterScale, kLetterScale, &modelViewMatrix.data[0]);
-            SampleApplicationUtils::multiplyMatrix(&vapp.projectionMatrix.data[0], &modelViewMatrix.data[0], &modelViewProjection.data[0]);
-        
-            glUseProgram(shaderProgramID);
-        
-            glVertexAttribPointer(vertexHandle, 3, GL_FLOAT, GL_FALSE, 0, obj3D.vertices);
-            glVertexAttribPointer(normalHandle, 3, GL_FLOAT, GL_FALSE, 0, obj3D.normals);
-            glVertexAttribPointer(textureCoordHandle, 2, GL_FLOAT, GL_FALSE, 0, obj3D.texCoords);
-        
-            glEnableVertexAttribArray(vertexHandle);
-            glEnableVertexAttribArray(normalHandle);
-            glEnableVertexAttribArray(textureCoordHandle);
-        
-            glActiveTexture(GL_TEXTURE0);
-            glBindTexture(GL_TEXTURE_2D, [obj3D.texture textureID]);
-            glUniformMatrix4fv(mvpMatrixHandle, 1, GL_FALSE, (const GLfloat*)&modelViewProjection.data[0]);
-            glUniform1i(texSampler2DHandle, 0); //GL_TEXTURE0);
-            glDrawElements(GL_TRIANGLES, obj3D.numIndices, GL_UNSIGNED_SHORT, obj3D.indices);
-        
-            glDisableVertexAttribArray(vertexHandle);
-            glDisableVertexAttribArray(normalHandle);
-            glDisableVertexAttribArray(textureCoordHandle);
-         
-        }
-        
-        
         // check the card marker
         int card_res = [turnWrapper checkCard:marker.getMarkerId()];
-        NSLog(@"%d", card_res);
         // if both cards hav been recognized
         if (card_res == 2) {
             bool turn_res = [turnWrapper checkTwoCards];
             // if cards are correct
             if (turn_res) {
                 // go to turn win
-                NSLog(@"%s", "Second marker detected: correct answer!");
                 [self correctTurn];
             }
             else {
                 // go to turn fail
-                NSLog(@"%s", "Second marker detected: wrong answer!");
                 [self wrongTurn];
             }
         }
-        // just the first card has been recognized
+        // the first card has been recognized: add it as the first card variable
+        // and init the hints
         else if (card_res == 1) {
             firstCard = marker.getMarkerId();
         }
         // no cards have been recognized, do nothing
         else {
+        }
+        
+        // Choose the object and texture based on the marker ID
+        //int textureIndex = marker.getMarkerId();
+        //NSLog(@"[%d] marker-id tracked", marker.getMarkerId());
+        
+        // create the 3d object of the hint
+        if (marker.getMarkerId() != firstCard && firstCard != -1) {
+            // check if the markerId should be displayed
+            if ([turnWrapper checkHint:marker.getMarkerId()]) {
+                // display the hint
+                VuforiaObject3D *obj3D;
+                // if the hint is the right card let's display 'C'
+                if ([turnWrapper findCorrectHint:marker.getMarkerId()]) {
+                   obj3D  = [objects3D objectAtIndex:1];
+                }
+                // else display 'Q'
+                else {
+                    obj3D = [objects3D objectAtIndex:0];
+                }
+                
+                // Render with OpenGL 2
+                QCAR::Matrix44F modelViewProjection;
+                if (isFrontCamera) {
+                    SampleApplicationUtils::scalePoseMatrix(-1, 1, 1, &modelViewMatrix.data[0]);
+                }
+                SampleApplicationUtils::translatePoseMatrix(-kLetterTranslate, -kLetterTranslate, 0.f, &modelViewMatrix.data[0]);
+                SampleApplicationUtils::scalePoseMatrix(kLetterScale, kLetterScale, kLetterScale, &modelViewMatrix.data[0]);
+                SampleApplicationUtils::multiplyMatrix(&vapp.projectionMatrix.data[0], &modelViewMatrix.data[0], &modelViewProjection.data[0]);
+                
+                glUseProgram(shaderProgramID);
+                
+                glVertexAttribPointer(vertexHandle, 3, GL_FLOAT, GL_FALSE, 0, obj3D.vertices);
+                glVertexAttribPointer(normalHandle, 3, GL_FLOAT, GL_FALSE, 0, obj3D.normals);
+                glVertexAttribPointer(textureCoordHandle, 2, GL_FLOAT, GL_FALSE, 0, obj3D.texCoords);
+                
+                glEnableVertexAttribArray(vertexHandle);
+                glEnableVertexAttribArray(normalHandle);
+                glEnableVertexAttribArray(textureCoordHandle);
+                
+                glActiveTexture(GL_TEXTURE0);
+                glBindTexture(GL_TEXTURE_2D, [obj3D.texture textureID]);
+                glUniformMatrix4fv(mvpMatrixHandle, 1, GL_FALSE, (const GLfloat*)&modelViewProjection.data[0]);
+                glUniform1i(texSampler2DHandle, 0); //GL_TEXTURE0);
+                glDrawElements(GL_TRIANGLES, obj3D.numIndices, GL_UNSIGNED_SHORT, obj3D.indices);
+                
+                glDisableVertexAttribArray(vertexHandle);
+                glDisableVertexAttribArray(normalHandle);
+                glDisableVertexAttribArray(textureCoordHandle);
+            }
+         
         }
         
         

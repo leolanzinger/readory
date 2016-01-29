@@ -14,7 +14,8 @@
 #import "Turn.h"
 //#import "FrameMarkersViewController.h"
 
-static const int kNumAugmentationTextures = 1;
+// TODO: should be dynamic, not hardcoded
+static const int kNumAugmentationTextures = 2;
 
 
 // FrameMarkers is a subclass of UIView and conforms to the informal protocol

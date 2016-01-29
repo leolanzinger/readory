@@ -16,5 +16,7 @@
 -(id) init;
 -(int) checkCard:(int)marker_id;
 -(bool) checkTwoCards;
+-(bool) checkHint:(int)marker_id;
+-(bool) findCorrectHint:(int)marker_id;
 
 @end

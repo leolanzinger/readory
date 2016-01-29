@@ -15,6 +15,7 @@ import Foundation
     
     var firstCard: Int!
     var secondCard: Int!
+    var hints = [Int]()
     
     override init() {
         super.init()
@@ -49,79 +50,75 @@ import Foundation
         https://docs.google.com/spreadsheets/d/1b3wDgCXIFUgwYHqEf_eoiWoAzkr0y-xHb8ZA4aSK8eo/edit#gid=0
     */
     func checkTwoCards() -> Bool {
-        switch firstCard {
-        case 0:
-            if (secondCard == 1) {
+        if (firstCard % 2 == 0) {
+            if (secondCard == (firstCard + 1)) {
                 return true
             }
             else {
                 return false
             }
-        case 1:
-            if (secondCard == 0) {
+        }
+        else {
+            if (secondCard == (firstCard - 1)) {
                 return true
             }
             else {
                 return false
             }
-        case 2:
-            if (secondCard == 3) {
+        }
+    }
+    
+    /*
+        Check if a card should be displayed as hint
+    */
+    func checkHint(marker_id :Int) -> Bool {
+        if (self.hints.contains(marker_id)) {
+            return true
+        }
+        else {
+            // check if the other corresponding card hint is already displayed
+            if (marker_id % 2 == 0) {
+                if (self.hints.contains(marker_id + 1)) {
+                    return false
+                }
+                else {
+                    self.hints.append(marker_id)
+                    return true
+                }
+            }
+            else {
+                if (self.hints.contains(marker_id - 1)) {
+                    return false
+                }
+                else {
+                    self.hints.append(marker_id)
+                    return true
+                }
+
+            }
+        }
+    }
+    
+    /*
+        This method explicitly tells whether or not the recognized 
+        marker is the same card as the chosen one
+    */
+    func findCorrectHint(marker_id :Int) -> Bool {
+        if (marker_id % 2 == 0) {
+            if (firstCard == marker_id + 1 - 10) {
                 return true
             }
             else {
                 return false
             }
-        case 3:
-            if (secondCard == 2) {
+        }
+        else {
+            if (firstCard == marker_id - 1 - 10) {
                 return true
             }
             else {
                 return false
             }
-        case 4:
-            if (secondCard == 5) {
-                return true
-            }
-            else {
-                return false
-            }
-        case 5:
-            if (secondCard == 4) {
-                return true
-            }
-            else {
-                return false
-            }
-        case 6:
-            if (secondCard == 7) {
-                return true
-            }
-            else {
-                return false
-            }
-        case 7:
-            if (secondCard == 6) {
-                return true
-            }
-            else {
-                return false
-            }
-        case 8:
-            if (secondCard == 9) {
-                return true
-            }
-            else {
-                return false
-            }
-        case 9:
-            if (secondCard == 8) {
-                return true
-            }
-            else {
-                return false
-            }
-        default:
-            return false
         }
     }
 }
