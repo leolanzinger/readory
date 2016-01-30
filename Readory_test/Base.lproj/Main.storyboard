@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="SET THE NUMBER OF PLAYERS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ler-24-Xp9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SET THE NUMBER OF PLAYERS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ler-24-Xp9">
                                 <rect key="frame" x="20" y="20" width="368" height="146"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="368" id="mNF-TN-qOB"/>
@@ -27,16 +27,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="NJA-ko-POv">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="NJA-ko-POv">
                                 <rect key="frame" x="245" y="199" width="280" height="350"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-As-sXW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-As-sXW">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dbE-kK-cFc">
                                                 <rect key="frame" x="20" y="0.0" width="240" height="61"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOL-TH-fbp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOL-TH-fbp">
                                                         <rect key="frame" x="0.0" y="9" width="40" height="43"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="Rlh-t8-4YP"/>
@@ -96,7 +96,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Uz7-eb-BN5" appends="YES" id="3F7-FP-VLg"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBa-f2-Y43">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBa-f2-Y43">
                                         <rect key="frame" x="0.0" y="73" width="280" height="60"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sOI-2I-bdI">
@@ -162,13 +162,13 @@
                                             <outletCollection property="gestureRecognizers" destination="Oxt-30-4In" appends="YES" id="BzF-t1-0RD"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W52-3n-8hf">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W52-3n-8hf">
                                         <rect key="frame" x="0.0" y="145" width="280" height="60"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tlp-Ql-wxW">
                                                 <rect key="frame" x="20" y="0.0" width="240" height="61"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POB-af-EWN">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POB-af-EWN">
                                                         <rect key="frame" x="0.0" y="9" width="40" height="43"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="P1p-KB-OiV"/>
@@ -228,7 +228,7 @@
                                             <outletCollection property="gestureRecognizers" destination="34o-fY-7j0" appends="YES" id="OJz-Eh-F7x"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JyF-zD-7zp">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyF-zD-7zp">
                                         <rect key="frame" x="0.0" y="218" width="280" height="60"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="okr-GI-tr5">
@@ -294,7 +294,7 @@
                                             <outletCollection property="gestureRecognizers" destination="ick-du-rRK" appends="YES" id="Px5-oU-AqV"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-QY-S9h">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxo-QY-S9h">
                                         <rect key="frame" x="0.0" y="290" width="280" height="60"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M9X-mt-SiW">
@@ -370,7 +370,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.46274509803921571" green="0.81568627450980391" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="NJA-ko-POv" firstAttribute="top" secondItem="Ler-24-Xp9" secondAttribute="bottom" id="1mH-UC-jaK"/>
+                            <constraint firstItem="NJA-ko-POv" firstAttribute="top" secondItem="Ler-24-Xp9" secondAttribute="bottom" constant="20" id="1mH-UC-jaK"/>
+                            <constraint firstItem="Ler-24-Xp9" firstAttribute="top" secondItem="Hpg-XL-gAZ" secondAttribute="bottom" constant="30" id="AxQ-df-Ut2"/>
                             <constraint firstItem="Ler-24-Xp9" firstAttribute="centerX" secondItem="D3e-Ai-yCU" secondAttribute="centerX" id="Jj2-lm-36R"/>
                             <constraint firstItem="NJA-ko-POv" firstAttribute="centerX" secondItem="D3e-Ai-yCU" secondAttribute="centerX" id="VtS-8o-dZI"/>
                         </constraints>
@@ -498,23 +499,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6in-H1-chf">
-                                <rect key="frame" x="274" y="286" width="48" height="32"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <segue destination="Jc7-SA-gNj" kind="show" identifier="startGame" id="NKS-qj-UrE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-uc-3QB">
-                                <rect key="frame" x="271" y="356" width="52" height="30"/>
-                                <state key="normal" title="Tutorial"/>
-                                <connections>
-                                    <segue destination="hce-jj-sXH" kind="show" id="fIl-FC-e97"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JVD-gJ-RuR">
+                                <rect key="frame" x="244" y="200" width="280" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6in-H1-chf">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="RuF-5S-IOh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
+                                        <state key="normal" title="PLAY">
+                                            <color key="titleColor" red="0.46274509800000002" green="0.81568627449999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Jc7-SA-gNj" kind="show" identifier="startGame" id="NKS-qj-UrE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-uc-3QB">
+                                        <rect key="frame" x="0.0" y="120" width="280" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="gwD-Sb-Bh2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
+                                        <state key="normal" title="TUTORIAL">
+                                            <color key="titleColor" red="0.8862745098" green="0.36078431370000003" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="hce-jj-sXH" kind="show" id="fIl-FC-e97"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="MHE-Rq-MCn"/>
+                                    <constraint firstAttribute="width" constant="280" id="Pon-v8-H1B"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YOU ARE PLAYING WITH 2 PLAYERS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTG-ta-xle">
+                                <rect key="frame" x="116" y="20" width="368" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="368" id="dqb-Nm-oz7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.46274509800000002" green="0.81568627449999997" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hTG-ta-xle" firstAttribute="top" secondItem="j5h-Bp-aeO" secondAttribute="bottom" constant="10" id="FfZ-tF-7TL"/>
+                            <constraint firstItem="JVD-gJ-RuR" firstAttribute="centerX" secondItem="uHo-3R-Q0f" secondAttribute="centerX" id="Udf-To-vsh"/>
+                            <constraint firstItem="5DG-dK-3L5" firstAttribute="top" secondItem="JVD-gJ-RuR" secondAttribute="bottom" constant="40" id="ZF2-aF-9zy"/>
+                            <constraint firstItem="hTG-ta-xle" firstAttribute="centerX" secondItem="uHo-3R-Q0f" secondAttribute="centerX" id="ues-ao-6Fb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playersLabel" destination="hTG-ta-xle" id="F6Y-yE-1du"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRG-Wo-zGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

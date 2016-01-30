@@ -7,13 +7,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var countLabel: CountLabel!
+    @IBOutlet weak var playersLabel: UILabel!
     
     var selectedPlayers:Int!
-    var players:Int!
+    var players:Int! = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set the number of players label only if 
+        // number of players is set
+        if (players > 0) {
+            playersLabel.text = "You are playing with " + String(players) + " player"
+            if (players > 1) {
+                playersLabel.text = playersLabel.text! + "s"
+            }
+        }
     }
     
     @IBAction func onePlayer(sender: AnyObject) {
