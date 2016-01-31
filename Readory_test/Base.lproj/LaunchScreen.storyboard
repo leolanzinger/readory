@@ -23,11 +23,76 @@
                                     <constraint firstAttribute="width" constant="250" id="HSt-Uo-tpS"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bi5-eh-YCk">
+                                <rect key="frame" x="245" y="200" width="350" height="120"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="APQ-D4-Y1q">
+                                        <rect key="frame" x="50" y="0.0" width="250" height="60"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="c8l-3L-zV3">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="1kM-mr-zol"/>
+                                                    <constraint firstAttribute="width" constant="60" id="XQ4-Th-Nc1"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fox_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-1X-hNC">
+                                                <rect key="frame" x="95" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="efm-uo-k8Y"/>
+                                                    <constraint firstAttribute="width" constant="60" id="kC6-iC-9nq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lion_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="ruj-lW-g38">
+                                                <rect key="frame" x="190" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="cUI-Fi-NHR"/>
+                                                    <constraint firstAttribute="height" constant="60" id="hbT-Zo-jhZ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="PfJ-NK-Cdf"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fNw-ua-YrZ">
+                                        <rect key="frame" x="95" y="60" width="160" height="60"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parrot_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="MVw-K6-3nB">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="QFf-9W-hJ4"/>
+                                                    <constraint firstAttribute="width" constant="60" id="YNj-WB-igv"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="gD0-3q-jce"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="zpJ-4p-6cb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wolf_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="ebZ-Ar-Lt9">
+                                                <rect key="frame" x="100" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="1sE-I4-nIj"/>
+                                                    <constraint firstAttribute="width" constant="60" id="RuE-bU-tbR"/>
+                                                    <constraint firstAttribute="height" constant="60" id="UXu-81-8ro"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="X8t-hE-fFc"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="T4R-7I-Z3O"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="GZ9-9J-Hcv"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.027450980392156862" green="0.30980392156862746" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Bi5-eh-YCk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ALW-up-Mdw"/>
                             <constraint firstItem="scT-am-4D8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dnc-4P-rmF"/>
-                            <constraint firstItem="scT-am-4D8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Son-ZM-JAI"/>
+                            <constraint firstItem="scT-am-4D8" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Geh-F1-7D9"/>
+                            <constraint firstItem="Bi5-eh-YCk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="V6v-p8-zXG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +102,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fox_cl_xxhdpi" width="106" height="106"/>
+        <image name="lama_cl_xxhdpi" width="106" height="106"/>
+        <image name="lion_cl_xxhdpi" width="106" height="106"/>
         <image name="logo" width="1200" height="331"/>
+        <image name="parrot_cl_xxhdpi" width="106" height="106"/>
+        <image name="wolf_cl_xxhdpi" width="106" height="106"/>
     </resources>
 </document>

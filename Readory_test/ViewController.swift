@@ -9,6 +9,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playersLabel: UILabel!
     
+    @IBOutlet weak var lionPic: UIImageView!
+    @IBOutlet weak var parrotPic: UIImageView!
+    @IBOutlet weak var wolfPic: UIImageView!
+    @IBOutlet weak var foxPic: UIImageView!
+    @IBOutlet weak var lamaPic: UIImageView!
+    
     var selectedPlayers:Int!
     var players:Int! = -1
     
@@ -17,9 +23,23 @@ class ViewController: UIViewController {
         // set the number of players label only if 
         // number of players is set
         if (players > 0) {
-            playersLabel.text = "You are playing with " + String(players) + " player"
+            playersLabel.text = "YOU ARE PLAYING WITH " + String(players) + " PLAYER"
             if (players > 1) {
-                playersLabel.text = playersLabel.text! + "s"
+                playersLabel.text = playersLabel.text! + "S"
+                // show lion picture
+                lionPic.hidden = false
+                if (players > 2) {
+                    // show parrot pic
+                    parrotPic.hidden = false
+                    if (players > 3) {
+                        // show wolf pic
+                        wolfPic.hidden = false
+                        if (players > 4) {
+                            // show fox pic
+                            foxPic.hidden = false
+                        }
+                    }
+                }
             }
         }
     }
