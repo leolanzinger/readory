@@ -10,9 +10,11 @@ import UIKit
 
 class PageContentViewController: UIViewController {
     
-    @IBOutlet weak var onBoardingLabel: UILabel!
     @IBOutlet weak var onBoardingImage: UIImageView!
+    @IBOutlet weak var onBoardingNumber: UILabel!
     @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var onBoardingStack: UIStackView!
+    @IBOutlet weak var onBoardingLabel: UILabel!
     
     var pageIndex: Int?
     var titleText : String!
@@ -24,6 +26,7 @@ class PageContentViewController: UIViewController {
         super.viewDidLoad()
         ok_button = self.okButton
         self.onBoardingImage.image = UIImage(named: imageName)
+        self.onBoardingNumber.text = String(pageIndex)
         self.onBoardingLabel.text = self.titleText
         self.onBoardingLabel.alpha = 0.1
         UIView.animateWithDuration(1.0, animations: { () -> Void in
@@ -33,8 +36,7 @@ class PageContentViewController: UIViewController {
             okButton.hidden = true
         }
         else {
-            onBoardingLabel.hidden = true
-            onBoardingImage.hidden = true
+            onBoardingStack.hidden = true
         }
         
     }

@@ -18,6 +18,8 @@ public class Game {
     var score = [Int](count: 6, repeatedValue: 0)
     var matches:Int!
     let n_pairs = 5
+    var playerNames = ["LAMA", "TIGER", "PARROT", "WOLF", "FOX"]
+    var imageNames = ["lama_cl_xxhdpi", "lion_cl_xxhdpi", "parrot_cl_xxhdpi", "wolf_cl_xxhdpi", "fox_cl_xxhdpi"]
     
     class var sharedInstance: Game {
         struct Singleton {

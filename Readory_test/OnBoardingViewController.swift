@@ -10,14 +10,15 @@ import UIKit
 
 class OnBoardingViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    let pageTitles = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5", "Step 6", "Step 7", "Final step"]
-    var images = ["h1.png","h2.png","h3.png","h4.png","h5.png","h6.png","h7.png", "h7.png"]
+    
+    let pageTitles = ["CHOOSE YOUR FIRST CARD AND FLIP IT", "SCAN THE FRONT OF YOUR FIRST CARD", "SCAN THE CARDS ON THE TABLE TO SEE HINTS", "THE HINTS WILL SWITCH AMONG FOUR CATEGORIES", "FLIP THE CHOSEN CARD AND SCAN IT"]
+    var images = ["h1.png","h2.png","h3.png","h4.png","h5.png"]
     var count = 0
     
     var pageViewController : UIPageViewController!
     
     @IBAction func swipeLeft(sender: AnyObject) {
-        print("SWipe left")
+        print("Swipe left")
     }
     @IBAction func swiped(sender: AnyObject) {
         

@@ -10,12 +10,14 @@ import UIKit
 
 class TurnViewController: UIViewController {
 
-    @IBOutlet weak var turnLabel: UILabel!
+    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playerImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // append the player that is about to play the turn
-        turnLabel.text = turnLabel.text! + " " + String(Game.sharedInstance.playingPlayer)
+        playerName.text = String(Game.sharedInstance.playerNames[Game.sharedInstance.playingPlayer - 1])
+        playerImage.image = UIImage(named:Game.sharedInstance.imageNames[Game.sharedInstance.playingPlayer - 1])!
     }
 
     override func didReceiveMemoryWarning() {
