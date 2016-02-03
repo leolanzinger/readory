@@ -301,6 +301,16 @@ namespace {
         // and init the hints
         else if (card_res == 1) {
             firstCard = marker.getMarkerId();
+            
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Card recognized"
+                                                                           message:@"A card has been recognized, flip another one"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self.vc presentViewController:alert animated:YES completion:nil];
         }
         // no cards have been recognized, do nothing
         else {

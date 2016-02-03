@@ -10,16 +10,20 @@ import UIKit
 
 class TurnFailViewController: UIViewController {
     
-    @IBOutlet weak var turnLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // update the score
         Game.sharedInstance.turnLost();
         
-        // append the player that is about to play the turn
-        turnLabel.text = turnLabel.text! + " " + String(Game.sharedInstance.playingPlayer) + " turn!" 
+        // wait two seconds
+        let delay = 2 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            // go to finish game screen
+            self.performSegueWithIdentifier("nextPlayerTurn", sender: self)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -573,7 +572,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-3z-IjR">
                                 <rect key="frame" x="125" y="240" width="350" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ly-K1-OR9">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7ly-K1-OR9">
                                         <rect key="frame" x="50" y="0.0" width="250" height="60"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="vXw-Gh-RYf">
@@ -602,10 +601,10 @@
                                             <constraint firstAttribute="width" constant="250" id="Gyw-Gb-ep3"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v6u-eW-g5p">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v6u-eW-g5p">
                                         <rect key="frame" x="95" y="60" width="160" height="0.0"/>
                                         <subviews>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="wolf_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="hFJ-OQ-uis">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="wolf_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="hFJ-OQ-uis">
                                                 <rect key="frame" x="-220" y="-217" width="0.0" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="A0p-Y1-uT4"/>
@@ -614,7 +613,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="kno-nK-kHh"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="fox_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-zS-uEx">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="fox_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-zS-uEx">
                                                 <rect key="frame" x="-220" y="-217" width="0.0" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="8vc-uE-oyn"/>
@@ -800,37 +799,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Correct answer, play again!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDT-U9-BOg">
-                                <rect key="frame" x="114" y="289" width="207" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CORRECT ANSWER, PLAY AGAIN!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDT-U9-BOg">
+                                <rect key="frame" x="114" y="289" width="266" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="DVK-bH-FhH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mG-Qi-YAx">
-                                <rect key="frame" x="277" y="286" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Go!"/>
-                                <connections>
-                                    <action selector="playAgain:" destination="nud-7X-gid" eventType="touchUpInside" id="DMS-qn-CYy"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.36078431370000003" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IDT-U9-BOg" firstAttribute="centerY" secondItem="EqB-lW-SiM" secondAttribute="centerY" id="37p-bg-OTQ"/>
-                            <constraint firstItem="8mG-Qi-YAx" firstAttribute="centerX" secondItem="EqB-lW-SiM" secondAttribute="centerX" id="8mg-WX-rkP"/>
-                            <constraint firstItem="8mG-Qi-YAx" firstAttribute="centerY" secondItem="IDT-U9-BOg" secondAttribute="bottom" constant="40" id="AJE-rS-9iN"/>
                             <constraint firstItem="IDT-U9-BOg" firstAttribute="centerX" secondItem="EqB-lW-SiM" secondAttribute="centerX" id="V88-U9-wXO"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mie-8l-GgI" appends="YES" id="27J-kC-1jz"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="playAgainButton" destination="8mG-Qi-YAx" id="e86-R7-rGc"/>
-                        <outlet property="turnLabel" destination="IDT-U9-BOg" id="PzT-U1-h41"/>
                         <segue destination="vOP-B2-JLF" kind="show" identifier="gameFinished" id="KW7-nI-Jgt"/>
-                        <segue destination="bt8-L6-LEU" kind="show" identifier="playAgainSegue" id="XP3-gX-H60"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VJ-bP-0Bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mie-8l-GgI">
+                    <connections>
+                        <segue destination="Jc7-SA-gNj" kind="show" identifier="playAgainSegue" id="VEr-xt-b8j"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="340" y="2640"/>
         </scene>
@@ -846,34 +844,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wrong answer, now it's player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-Tz-2OH">
-                                <rect key="frame" x="94" y="289" width="227" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WRONG ANSWER, NEXT PLAYER!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-Tz-2OH">
+                                <rect key="frame" x="-16" y="289" width="236" height="88"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="etb-hz-2aX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjd-Sx-q0x">
-                                <rect key="frame" x="277" y="286" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Go!"/>
-                                <connections>
-                                    <segue destination="bt8-L6-LEU" kind="show" id="3tI-cf-AXS"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.36078431370000003" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Hjd-Sx-q0x" firstAttribute="centerX" secondItem="4LX-4p-Xr4" secondAttribute="centerX" id="1Ys-A0-JeA"/>
                             <constraint firstItem="6AO-Tz-2OH" firstAttribute="centerY" secondItem="4LX-4p-Xr4" secondAttribute="centerY" id="CGS-TY-ZLK"/>
                             <constraint firstItem="6AO-Tz-2OH" firstAttribute="centerX" secondItem="4LX-4p-Xr4" secondAttribute="centerX" id="HF0-5c-0L1"/>
-                            <constraint firstItem="Hjd-Sx-q0x" firstAttribute="centerY" secondItem="6AO-Tz-2OH" secondAttribute="bottom" constant="40" id="Qnr-vY-i6p"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TFa-ab-YtL" appends="YES" id="RNk-NW-GB4"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="turnLabel" destination="6AO-Tz-2OH" id="gum-fK-fcl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="696-iY-bnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TFa-ab-YtL">
+                    <connections>
+                        <segue destination="Jc7-SA-gNj" kind="show" identifier="nextPlayerTurn" id="8fP-Ds-c5v"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1320" y="2652"/>
         </scene>
@@ -890,7 +888,7 @@
         <image name="wolf_cl_xxhdpi" width="106" height="106"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="325-Y4-RcD"/>
+        <segue reference="8fP-Ds-c5v"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readory_test/FrameMarkersEAGLView.mm"
-            timestampString = "475757501.36773"
+            timestampString = "476198932.768914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "489"
-            endingLineNumber = "489"
+            startingLineNumber = "499"
+            endingLineNumber = "499"
             landmarkName = "-wrongTurn"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readory_test/FrameMarkersEAGLView.mm"
-            timestampString = "475757501.36773"
+            timestampString = "476198932.768914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "480"
-            endingLineNumber = "480"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "-setVC:"
             landmarkType = "5">
          </BreakpointContent>
