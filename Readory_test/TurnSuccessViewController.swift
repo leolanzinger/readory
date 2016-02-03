@@ -12,6 +12,8 @@ class TurnSuccessViewController: UIViewController {
 
     var finish:Bool = false
     
+    @IBOutlet weak var turnLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // update the score
@@ -21,6 +23,7 @@ class TurnSuccessViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(false)
         if (finish) {
+            turnLabel.text = "CORRECT ANSWER!"
             // wait two seconds
             let delay = 2 * Double(NSEC_PER_SEC)
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))

@@ -13,6 +13,7 @@
 		B35FA6E51C5A3AEA00525812 /* TurnSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E53B41C57ABC9000285B9 /* TurnSuccessViewController.swift */; };
 		B35FA6E71C5A621A00525812 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6E61C5A621A00525812 /* PageContentViewController.swift */; };
 		B35FA6E91C5A683500525812 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FA6E81C5A683500525812 /* OnBoardingViewController.swift */; };
+		B36961011C6243B900FCBEDD /* ScoreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36961001C6243B900FCBEDD /* ScoreCellView.swift */; };
 		B38E53931C5680A8000285B9 /* VuforiaObject3D.m in Sources */ = {isa = PBXBuildFile; fileRef = B38E53921C5680A8000285B9 /* VuforiaObject3D.m */; };
 		B38E539A1C56814D000285B9 /* SampleApplicationUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B38E53991C56814D000285B9 /* SampleApplicationUtils.cpp */; };
 		B38E539D1C568183000285B9 /* SampleApplicationShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B38E539C1C568183000285B9 /* SampleApplicationShaderUtils.m */; };
@@ -84,6 +85,7 @@
 		B35FA6E31C5A36C200525812 /* GameFinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFinishedViewController.swift; sourceTree = "<group>"; };
 		B35FA6E61C5A621A00525812 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		B35FA6E81C5A683500525812 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		B36961001C6243B900FCBEDD /* ScoreCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCellView.swift; sourceTree = "<group>"; };
 		B38E53911C568093000285B9 /* VuforiaObject3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VuforiaObject3D.h; sourceTree = "<group>"; };
 		B38E53921C5680A8000285B9 /* VuforiaObject3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VuforiaObject3D.m; sourceTree = "<group>"; };
 		B38E53941C5680DC000285B9 /* A_object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A_object.h; sourceTree = "<group>"; };
@@ -213,6 +215,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B36961021C62449000FCBEDD /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B3B58B241C47FA86007D4B29 /* CountLabel.swift */,
+				B36961001C6243B900FCBEDD /* ScoreCellView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		B38E539F1C5681D6000285B9 /* markers */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,7 +340,7 @@
 				B396CE571C4E440A007D41B3 /* models */,
 				B3B58AF41C47ED97007D4B29 /* Shader.vsh */,
 				B396CE561C4E43ED007D41B3 /* controllers */,
-				B3B58B241C47FA86007D4B29 /* CountLabel.swift */,
+				B36961021C62449000FCBEDD /* views */,
 				B396CE6C1C4E5804007D41B3 /* utils */,
 				B3B58AF81C47ED97007D4B29 /* Main.storyboard */,
 				B38E53A81C568251000285B9 /* models */,
@@ -504,6 +515,7 @@
 				B35FA6E51C5A3AEA00525812 /* TurnSuccessViewController.swift in Sources */,
 				B38E539E1C5681AA000285B9 /* Texture.h in Sources */,
 				B3AFFEEA1C5386EE0021E606 /* FrameMarkersViewController.mm in Sources */,
+				B36961011C6243B900FCBEDD /* ScoreCellView.swift in Sources */,
 				B3AFFEE91C5385C30021E606 /* FrameMarkersEAGLView.mm in Sources */,
 				B35FA6DF1C591A3D00525812 /* Turn.swift in Sources */,
 				B3B58B251C47FA86007D4B29 /* CountLabel.swift in Sources */,
