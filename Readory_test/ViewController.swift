@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "startGame") {
             Game.init()
-            Game.sharedInstance.setPlayers(self.players)
+            Game.swiftSharedInstance.setPlayers(self.players)
         }
         else if (segue.identifier == "confirmGame") {
             let secondViewController = segue.destinationViewController as! ViewController

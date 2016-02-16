@@ -896,7 +896,7 @@
     </scenes>
     <resources>
         <image name="fox_bw_xxhdpi" width="106" height="106"/>
-        <image name="fox_cl_xxhdpi" width="106" height="106"/>
+        <image name="fox_cl_xxhdpi" width="250" height="250"/>
         <image name="lama_cl_xxhdpi" width="106" height="106"/>
         <image name="lion_bw_xxhdpi" width="106" height="106"/>
         <image name="lion_cl_xxhdpi" width="106" height="106"/>

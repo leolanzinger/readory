@@ -17,7 +17,7 @@ class TurnSuccessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // update the score
-        finish = Game.sharedInstance.turnWon()
+        finish = Game.swiftSharedInstance.turnWon()
     }
     
     override func viewDidAppear(animated: Bool) {

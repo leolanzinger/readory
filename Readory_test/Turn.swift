@@ -13,30 +13,34 @@ import Foundation
 
 @objc class Turn: NSObject {
     
-    var firstCard: Int!
-    var secondCard: Int!
-    var hints = [Int]()
+    var firstCard: Card!
+    var secondCard: Card!
+    var hints = [Card]()
+    var g: Game!
     
     override init() {
         super.init()
-        self.firstCard = -1
-        self.secondCard = -1
+        self.firstCard = nil
+        self.secondCard = nil
+        g = Game.swiftSharedInstance
     }
     
     /*
         Check if the first card is not already selected, then add the scanned card
-        (if it's a front card -> marker is less than 10). If first card is already selected,
+        (if it's a front card -> marker is less than the first card back marker). If first card is already selected,
         then add the scanned front card to the second card.
         Return TRUE only when the turn is complete and checkTwoCards needs to be called
         by the viewController.
     */
-    func checkCard(marker_id :Int) -> Int{
-        if (self.firstCard == -1 && self.secondCard == -1 && marker_id < 10) {
-            self.firstCard = marker_id
+    func checkCard(m_id :Int) -> Int{
+        let cards = g.cards
+        let pl_card = g.findCardFromMarker(m_id, marker_type: "front")
+        if (self.firstCard == nil && self.secondCard == nil && !g.played_cards.contains(pl_card)) {
+            self.firstCard = pl_card
             return 1
         }
-        else if (self.firstCard != -1 && self.firstCard != marker_id && self.secondCard == -1 && marker_id < 10) {
-            self.secondCard = marker_id
+        else if (self.firstCard != nil && self.firstCard.front_marker != m_id && self.secondCard == nil && !g.played_cards.contains(pl_card)) {
+            self.secondCard = pl_card
             return 2
         }
         else {
@@ -50,21 +54,12 @@ import Foundation
         https://docs.google.com/spreadsheets/d/1b3wDgCXIFUgwYHqEf_eoiWoAzkr0y-xHb8ZA4aSK8eo/edit#gid=0
     */
     func checkTwoCards() -> Bool {
-        if (firstCard % 2 == 0) {
-            if (secondCard == (firstCard + 1)) {
-                return true
-            }
-            else {
-                return false
-            }
+        if (firstCard.corresponding == secondCard.id) {
+            g.setAlreadyPlayed(firstCard, sCard: secondCard)
+            return true
         }
         else {
-            if (secondCard == (firstCard - 1)) {
-                return true
-            }
-            else {
-                return false
-            }
+            return false
         }
     }
     
@@ -72,53 +67,25 @@ import Foundation
         Check if a card should be displayed as hint
     */
     func checkHint(marker_id :Int) -> Bool {
-        if (self.hints.contains(marker_id)) {
-            return true
-        }
-        else {
-            // check if the other corresponding card hint is already displayed
-            if (marker_id % 2 == 0) {
-                if (self.hints.contains(marker_id + 1)) {
-                    return false
-                }
-                else {
-                    self.hints.append(marker_id)
-                    return true
-                }
-            }
-            else {
-                if (self.hints.contains(marker_id - 1)) {
-                    return false
-                }
-                else {
-                    self.hints.append(marker_id)
-                    return true
-                }
-
-            }
-        }
-    }
-    
-    /*
-        This method explicitly tells whether or not the recognized 
-        marker is the same card as the chosen one
-    */
-    func findCorrectHint(marker_id :Int) -> Bool {
-        if (marker_id % 2 == 0) {
-            if (firstCard == marker_id + 1 - 10) {
+        var pl_card = g.findCardFromMarker(marker_id, marker_type: "back")
+        if (!g.played_cards.contains(pl_card)) {
+            if (self.hints.contains(g.findCardFromMarker(marker_id, marker_type: "back"))) {
                 return true
             }
             else {
-                return false
+                // check if the other corresponding card hint is already displayed
+                var picked_card = g.findCardFromMarker(marker_id, marker_type: "back")
+                if (self.hints.contains(g.findCardFromMarker(g.cards[picked_card.corresponding!].back_marker!, marker_type: "back"))) {
+                    return false
+                }
+                else {
+                    self.hints.append(picked_card)
+                    return true
+                }
             }
         }
         else {
-            if (firstCard == marker_id - 1 - 10) {
-                return true
-            }
-            else {
-                return false
-            }
+            return false
         }
     }
 }

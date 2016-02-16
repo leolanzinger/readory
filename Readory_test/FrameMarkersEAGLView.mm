@@ -18,6 +18,7 @@
 #import "Q_object.h"
 #import "R_object.h"
 #import "Teapot.h"
+#import "star.h"
 
 #import "FrameMarkersEAGLView.h"
 #import "Texture.h"
@@ -27,6 +28,7 @@
 #import "FrameMarkersViewController.h"
 
 #import "Turn.h"
+#import "ObjParser.h"
 
 //******************************************************************************
 // *** OpenGL ES thread safety ***
@@ -56,7 +58,7 @@ namespace {
     // Texture filenames
     const char* textureFilenames[] = {
         "letter_Q.png",
-        "letter_C.png"/*,
+        "blue_texture.png"/*,
         "letter_A.png",
         "letter_R.png",
         "TextureTeapotRed.png"*/
@@ -139,11 +141,9 @@ namespace {
         
         [self initShaders];
         
-        // init the turn object
-        turnWrapper = [[TurnWrapper alloc]init];
-        
         // set the first card to -1
         firstCard = -1;
+
     }
     
     return self;
@@ -223,6 +223,22 @@ namespace {
     [self add3DObjectWith:NUM_TEAPOT_OBJECT_VERTEX ofVertices:teapotVertices normals:teapotNormals texcoords:teapotTexCoords
                      with:NUM_TEAPOT_OBJECT_INDEX ofIndices:teapotIndices usingTextureIndex:4];
      */
+    
+    
+    // import the game shared instance
+    self.game = [[GameWrapper alloc] init];
+    
+    // load the object parser
+    self.objParser = [[ObjParser alloc] init];
+    
+    
+    // init the turn object
+    self.turnWrapper = [[TurnWrapper alloc] init];
+    
+    // load programmatically obj files
+    //NSString *url = [self.game getFirstMod];
+    //VuforiaObject3D *parsedObj = [self.objParser loadObject:url];
+    
 }
 
 - (void) setOffTargetTrackingMode:(BOOL) enabled {
@@ -283,37 +299,39 @@ namespace {
         }
         
         // check the card marker
-        int card_res = [turnWrapper checkCard:marker.getMarkerId()];
-        // if both cards hav been recognized
-        if (card_res == 2) {
-            bool turn_res = [turnWrapper checkTwoCards];
-            // if cards are correct
-            if (turn_res) {
-                // go to turn win
-                [self correctTurn];
+        if (marker.getMarkerId() < [self.game getLowestBackMark]) {
+            int card_res = [self.turnWrapper checkCard:marker.getMarkerId()];
+            // if both cards hav been recognized
+            if (card_res == 2) {
+                bool turn_res = [self.turnWrapper checkTwoCards];
+                // if cards are correct
+                if (turn_res) {
+                    // go to turn win
+                    [self correctTurn];
+                }
+                else {
+                    // go to turn fail
+                    [self wrongTurn];
+                }
             }
-            else {
-                // go to turn fail
-                [self wrongTurn];
-            }
-        }
-        // the first card has been recognized: add it as the first card variable
-        // and init the hints
-        else if (card_res == 1) {
-            firstCard = marker.getMarkerId();
+            // the first card has been recognized: add it as the first card variable
+            // and init the hints
+            else if (card_res == 1) {
+                firstCard = marker.getMarkerId();
             
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Card recognized"
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Card recognized"
                                                                            message:@"A card has been recognized, flip another one"
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {}];
             
-            [alert addAction:defaultAction];
-            [self.vc presentViewController:alert animated:YES completion:nil];
-        }
-        // no cards have been recognized, do nothing
-        else {
+                [alert addAction:defaultAction];
+                [self.vc presentViewController:alert animated:YES completion:nil];
+            }
+            // no cards have been recognized, do nothing
+            else {
+            }
         }
         
         // Choose the object and texture based on the marker ID
@@ -321,19 +339,33 @@ namespace {
         //NSLog(@"[%d] marker-id tracked", marker.getMarkerId());
         
         // create the 3d object of the hint
-        if (marker.getMarkerId() != firstCard && firstCard != -1 && marker.getMarkerId() > 9) {
+        int lowest_marker = [self.game getLowestBackMark];
+        if (marker.getMarkerId() != firstCard && firstCard != -1 && marker.getMarkerId() >= lowest_marker) {
             // check if the markerId should be displayed
-            if ([turnWrapper checkHint:marker.getMarkerId()]) {
+            if ([self.turnWrapper checkHint:marker.getMarkerId()]) {
                 // display the hint
-                VuforiaObject3D *obj3D;
+                VuforiaObject3D *obj3D = [[VuforiaObject3D alloc] init];
                 // if the hint is the right card let's display 'C'
-                if ([turnWrapper findCorrectHint:marker.getMarkerId()]) {
-                   obj3D  = [objects3D objectAtIndex:1];
+                /*if ([turnWrapper findCorrectHint:marker.getMarkerId()]) {
+                   //obj3D  = [objects3D objectAtIndex:1];
+                    
+                    NSLog(@"tracked correct hint marker");
+                    
+                    //blender object
+                    BlenderExportedObject object = text_001Object;
+                    
+                    obj3D.numVertices = object.numVertices;
+                    obj3D.vertices = object.vertices;
+                    obj3D.normals = object.normals;
+                    obj3D.texCoords = object.texCoords;
+                    obj3D.numIndices = object.numIndices;
+                    obj3D.indices = object.indices;
+                    obj3D.texture = augmentationTexture[1];
                 }
                 // else display 'Q'
-                else {
+                else {*/
                     obj3D = [objects3D objectAtIndex:0];
-                }
+                //}
                 
                 // Render with OpenGL 2
                 QCAR::Matrix44F modelViewProjection;

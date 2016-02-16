@@ -12,6 +12,9 @@
 #import "SampleGLResourceHandler.h"
 #import "SampleApplicationSession.h"
 #import "Turn.h"
+#import "Game.h"
+#import "ObjParser.h"
+
 //#import "FrameMarkersViewController.h"
 
 // TODO: should be dynamic, not hardcoded
@@ -39,8 +42,7 @@ static const int kNumAugmentationTextures = 2;
     GLint mvpMatrixHandle;
     GLint texSampler2DHandle;
     
-    // turn object
-    TurnWrapper *turnWrapper;
+    
     
     // Texture used when rendering augmentation
     Texture* augmentationTexture[kNumAugmentationTextures];
@@ -51,6 +53,14 @@ static const int kNumAugmentationTextures = 2;
 
 @property (nonatomic, weak) SampleApplicationSession * vapp;
 @property (nonatomic, weak) UIViewController* vc;
+// turn object
+@property (nonatomic, strong) TurnWrapper *turnWrapper;
+
+// game wrapper
+@property (nonatomic, strong) GameWrapper *game;
+
+// object parser
+@property (nonatomic, strong) ObjParser *objParser;
 
 - (id)initWithFrame:(CGRect)frame appSession:(SampleApplicationSession *) app;
 

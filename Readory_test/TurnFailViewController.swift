@@ -14,7 +14,7 @@ class TurnFailViewController: UIViewController {
         super.viewDidLoad()
         
         // update the score
-        Game.sharedInstance.turnLost();
+        Game.swiftSharedInstance.turnLost();
         
         // wait two seconds
         let delay = 2 * Double(NSEC_PER_SEC)

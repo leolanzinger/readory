@@ -49,9 +49,6 @@
     return [self.turn checkHint:marker_id];
 }
 
--(bool)findCorrectHint:(int)marker_id {
-    return [self.turn findCorrectHint:marker_id];
-}
 
 
 @end

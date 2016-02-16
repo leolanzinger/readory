@@ -14,6 +14,7 @@
 #import <QCAR/Trackable.h>
 #import <QCAR/CameraDevice.h>
 #import "AppDelegate.h"
+#import "Game.h"
 
 @interface FrameMarkersViewController ()
 
@@ -170,8 +171,19 @@
         NSLog(@"Failed to get MarkerTracker.");
         return NO;
     }
+    // import the game shared instance
+    self.game = [[GameWrapper alloc] init];
     
+    NSArray *markers = [self.game getAllMarks];
+    
+    for (int i = 0; i< markers.count; i++) {
+        NSString* markerName = ([NSString stringWithFormat:@"%s%d", "Marker",[(NSNumber*) markers[i] intValue]] );
+        if (!markerTracker->createFrameMarker([(NSNumber*) markers[i] intValue], [markerName UTF8String], QCAR::Vec2F(50,50))) {
+            return NO;
+        }
+    }
     // Create frame markers: - put them into an xml file
+    /*
     if (!markerTracker->createFrameMarker(0, "Marker0", QCAR::Vec2F(50,50)) ||
         !markerTracker->createFrameMarker(1, "Marker1", QCAR::Vec2F(50,50)) ||
         !markerTracker->createFrameMarker(2, "Marker2", QCAR::Vec2F(50,50)) ||
@@ -195,7 +207,8 @@
     {
         NSLog(@"Failed to create frame markers.");
         return NO;
-    }
+    }*/
+    
     return YES;
 }
 

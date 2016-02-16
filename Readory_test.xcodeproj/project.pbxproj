@@ -43,6 +43,7 @@
 		B3AC8ADD1C512E8E00E1B297 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3AC8ADC1C512E8E00E1B297 /* CoreGraphics.framework */; };
 		B3AFFEE91C5385C30021E606 /* FrameMarkersEAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3AC8ADE1C51303D00E1B297 /* FrameMarkersEAGLView.mm */; };
 		B3AFFEEA1C5386EE0021E606 /* FrameMarkersViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B396CE681C4E5769007D41B3 /* FrameMarkersViewController.mm */; };
+		B3B1898A1C637CCD007CB9F8 /* blue_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = B3B189891C637CCD007CB9F8 /* blue_texture.png */; };
 		B3B58AF31C47ED97007D4B29 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B3B58AF21C47ED97007D4B29 /* Shader.fsh */; };
 		B3B58AF51C47ED97007D4B29 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B3B58AF41C47ED97007D4B29 /* Shader.vsh */; };
 		B3B58AF71C47ED97007D4B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B58AF61C47ED97007D4B29 /* ViewController.swift */; };
@@ -53,11 +54,20 @@
 		B3B58B151C47ED97007D4B29 /* Readory_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B58B141C47ED97007D4B29 /* Readory_testUITests.swift */; };
 		B3B58B251C47FA86007D4B29 /* CountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B58B241C47FA86007D4B29 /* CountLabel.swift */; };
 		B3B58B271C490442007D4B29 /* TurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B58B261C490442007D4B29 /* TurnViewController.swift */; };
+		B3DD9E011C724407002CD77A /* cards.xml in Resources */ = {isa = PBXBuildFile; fileRef = B3DD9E001C724407002CD77A /* cards.xml */; };
+		B3DD9E031C724709002CD77A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD9E021C724709002CD77A /* Card.swift */; };
+		B3DD9E051C724AA9002CD77A /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD9E041C724AA9002CD77A /* AEXML.swift */; };
+		B3DD9E081C727ADE002CD77A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DD9E071C727ADE002CD77A /* Game.m */; };
 		B3F3E53E1C4F97F00043764C /* SampleApplicationSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3F3E53D1C4F97F00043764C /* SampleApplicationSession.mm */; };
 		B3F3E5401C4F9EC50043764C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F3E53F1C4F9EC50043764C /* AVFoundation.framework */; };
 		B3F3E5421C4F9EDD0043764C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F3E5411C4F9EDD0043764C /* CoreMotion.framework */; };
 		B3F3E5441C4F9EEF0043764C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F3E5431C4F9EEF0043764C /* SystemConfiguration.framework */; };
 		B3F3E5461C4F9EF90043764C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F3E5451C4F9EF90043764C /* CoreMedia.framework */; };
+		B3FACA861C732B7700DFE2C6 /* marker_0_misspelling.obj in Resources */ = {isa = PBXBuildFile; fileRef = B3FACA851C732B7700DFE2C6 /* marker_0_misspelling.obj */; };
+		B3FACA891C732CC100DFE2C6 /* ObjParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FACA881C732CC100DFE2C6 /* ObjParser.m */; };
+		B3FACA8D1C733FB500DFE2C6 /* marker_0_synonym.obj in Resources */ = {isa = PBXBuildFile; fileRef = B3FACA8A1C733FB500DFE2C6 /* marker_0_synonym.obj */; };
+		B3FACA8E1C733FB500DFE2C6 /* marker_0_association.obj in Resources */ = {isa = PBXBuildFile; fileRef = B3FACA8B1C733FB500DFE2C6 /* marker_0_association.obj */; };
+		B3FACA8F1C733FB500DFE2C6 /* marker_0_sonne.obj in Resources */ = {isa = PBXBuildFile; fileRef = B3FACA8C1C733FB500DFE2C6 /* marker_0_sonne.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +140,7 @@
 		B3AC8ADA1C512E7900E1B297 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B3AC8ADC1C512E8E00E1B297 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B3AC8ADE1C51303D00E1B297 /* FrameMarkersEAGLView.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = FrameMarkersEAGLView.mm; sourceTree = "<group>"; };
+		B3B189891C637CCD007CB9F8 /* blue_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_texture.png; sourceTree = "<group>"; };
 		B3B58AED1C47ED97007D4B29 /* Readory_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readory_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B58AF21C47ED97007D4B29 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		B3B58AF41C47ED97007D4B29 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
@@ -146,12 +157,24 @@
 		B3B58B161C47ED97007D4B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3B58B241C47FA86007D4B29 /* CountLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountLabel.swift; path = ../../../DEVELOP/KWStepper/Example/Example/Views/CountLabel.swift; sourceTree = "<group>"; };
 		B3B58B261C490442007D4B29 /* TurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnViewController.swift; sourceTree = "<group>"; };
+		B3DD9E001C724407002CD77A /* cards.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cards.xml; sourceTree = "<group>"; };
+		B3DD9E021C724709002CD77A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B3DD9E041C724AA9002CD77A /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
+		B3DD9E061C727ADE002CD77A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		B3DD9E071C727ADE002CD77A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		B3E26E951C62B4B800B2199F /* star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = star.h; sourceTree = "<group>"; };
 		B3F3E53C1C4F97D00043764C /* SampleApplicationSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleApplicationSession.h; sourceTree = "<group>"; };
 		B3F3E53D1C4F97F00043764C /* SampleApplicationSession.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = SampleApplicationSession.mm; sourceTree = "<group>"; };
 		B3F3E53F1C4F9EC50043764C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B3F3E5411C4F9EDD0043764C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B3F3E5431C4F9EEF0043764C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B3F3E5451C4F9EF90043764C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B3FACA851C732B7700DFE2C6 /* marker_0_misspelling.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = marker_0_misspelling.obj; sourceTree = "<group>"; };
+		B3FACA871C732CC100DFE2C6 /* ObjParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjParser.h; sourceTree = "<group>"; };
+		B3FACA881C732CC100DFE2C6 /* ObjParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjParser.m; sourceTree = "<group>"; };
+		B3FACA8A1C733FB500DFE2C6 /* marker_0_synonym.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = marker_0_synonym.obj; sourceTree = "<group>"; };
+		B3FACA8B1C733FB500DFE2C6 /* marker_0_association.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = marker_0_association.obj; sourceTree = "<group>"; };
+		B3FACA8C1C733FB500DFE2C6 /* marker_0_sonne.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = marker_0_sonne.obj; sourceTree = "<group>"; };
 		E94AA92BFF68FFD8899C9EBC /* Pods_Readory_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Readory_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,6 +256,7 @@
 				B38E53911C568093000285B9 /* VuforiaObject3D.h */,
 				B38E53941C5680DC000285B9 /* A_object.h */,
 				B38E53961C5680FA000285B9 /* Q_object.h */,
+				B3E26E951C62B4B800B2199F /* star.h */,
 				B38E53971C568106000285B9 /* R_object.h */,
 				B38E53B81C5824C0000285B9 /* Teapot.h */,
 				B38E53951C5680ED000285B9 /* C_object.h */,
@@ -248,6 +272,7 @@
 				B38E53B91C582B29000285B9 /* TextureTeapotRed.png */,
 				B38E53A11C568249000285B9 /* letter_C.png */,
 				B38E53A21C568249000285B9 /* letter_Q.png */,
+				B3B189891C637CCD007CB9F8 /* blue_texture.png */,
 				B38E53A31C568249000285B9 /* letter_R.png */,
 			);
 			name = models;
@@ -286,6 +311,9 @@
 			children = (
 				B396CE581C4E441B007D41B3 /* Game.swift */,
 				B35FA6DE1C591A3D00525812 /* Turn.swift */,
+				B3DD9E021C724709002CD77A /* Card.swift */,
+				B3DD9E061C727ADE002CD77A /* Game.h */,
+				B3DD9E071C727ADE002CD77A /* Game.m */,
 				B35FA6DB1C59166D00525812 /* Turn.m */,
 				B35FA6DD1C5917C100525812 /* Turn.h */,
 			);
@@ -295,7 +323,10 @@
 		B396CE6C1C4E5804007D41B3 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				B3FACA871C732CC100DFE2C6 /* ObjParser.h */,
+				B3FACA881C732CC100DFE2C6 /* ObjParser.m */,
 				B396CE6D1C4E583C007D41B3 /* SampleGLResourceHandler.h */,
+				B3DD9E041C724AA9002CD77A /* AEXML.swift */,
 				B3F3E53C1C4F97D00043764C /* SampleApplicationSession.h */,
 				B3F3E53D1C4F97F00043764C /* SampleApplicationSession.mm */,
 				B38E539F1C5681D6000285B9 /* markers */,
@@ -345,6 +376,7 @@
 				B3B58AF81C47ED97007D4B29 /* Main.storyboard */,
 				B38E53A81C568251000285B9 /* models */,
 				B3B58AFB1C47ED97007D4B29 /* Assets.xcassets */,
+				B3DD9DFF1C7243BF002CD77A /* Resources */,
 				B3B58AFD1C47ED97007D4B29 /* LaunchScreen.storyboard */,
 				B3AC8ACE1C512D9600E1B297 /* main.m */,
 				B3B58B001C47ED97007D4B29 /* Info.plist */,
@@ -368,6 +400,18 @@
 				B3B58B161C47ED97007D4B29 /* Info.plist */,
 			);
 			path = Readory_testUITests;
+			sourceTree = "<group>";
+		};
+		B3DD9DFF1C7243BF002CD77A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD9E001C724407002CD77A /* cards.xml */,
+				B3FACA851C732B7700DFE2C6 /* marker_0_misspelling.obj */,
+				B3FACA8A1C733FB500DFE2C6 /* marker_0_synonym.obj */,
+				B3FACA8B1C733FB500DFE2C6 /* marker_0_association.obj */,
+				B3FACA8C1C733FB500DFE2C6 /* marker_0_sonne.obj */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,12 +520,18 @@
 			files = (
 				B3B58AFA1C47ED97007D4B29 /* Main.storyboard in Resources */,
 				B38E53A51C568249000285B9 /* letter_C.png in Resources */,
+				B3B1898A1C637CCD007CB9F8 /* blue_texture.png in Resources */,
 				B38E53B01C577F65000285B9 /* Line.vertsh in Resources */,
 				B3B58AF51C47ED97007D4B29 /* Shader.vsh in Resources */,
+				B3FACA8E1C733FB500DFE2C6 /* marker_0_association.obj in Resources */,
+				B3DD9E011C724407002CD77A /* cards.xml in Resources */,
+				B3FACA8F1C733FB500DFE2C6 /* marker_0_sonne.obj in Resources */,
 				B3B58AFC1C47ED97007D4B29 /* Assets.xcassets in Resources */,
 				B3B58AFF1C47ED97007D4B29 /* LaunchScreen.storyboard in Resources */,
 				B38E53BA1C582B29000285B9 /* TextureTeapotRed.png in Resources */,
+				B3FACA861C732B7700DFE2C6 /* marker_0_misspelling.obj in Resources */,
 				B3B58AF31C47ED97007D4B29 /* Shader.fsh in Resources */,
+				B3FACA8D1C733FB500DFE2C6 /* marker_0_synonym.obj in Resources */,
 				B38E53A41C568249000285B9 /* letter_A.png in Resources */,
 				B38E53B11C577F65000285B9 /* Simple.fragsh in Resources */,
 				B38E53B21C577F65000285B9 /* Simple.vertsh in Resources */,
@@ -520,16 +570,20 @@
 				B35FA6DF1C591A3D00525812 /* Turn.swift in Sources */,
 				B3B58B251C47FA86007D4B29 /* CountLabel.swift in Sources */,
 				B3B58AF71C47ED97007D4B29 /* ViewController.swift in Sources */,
+				B3FACA891C732CC100DFE2C6 /* ObjParser.m in Sources */,
 				B38E539A1C56814D000285B9 /* SampleApplicationUtils.cpp in Sources */,
 				B396CE591C4E441B007D41B3 /* Game.swift in Sources */,
 				B35FA6E91C5A683500525812 /* OnBoardingViewController.swift in Sources */,
 				B3AC8A8E1C511B2000E1B297 /* AppDelegate.m in Sources */,
 				B38E539D1C568183000285B9 /* SampleApplicationShaderUtils.m in Sources */,
+				B3DD9E051C724AA9002CD77A /* AEXML.swift in Sources */,
 				B38E53931C5680A8000285B9 /* VuforiaObject3D.m in Sources */,
+				B3DD9E081C727ADE002CD77A /* Game.m in Sources */,
 				B38E53B71C57AC1F000285B9 /* TurnFailViewController.swift in Sources */,
 				B35FA6E41C5A36C200525812 /* GameFinishedViewController.swift in Sources */,
 				B35FA6DC1C59166D00525812 /* Turn.m in Sources */,
 				B3F3E53E1C4F97F00043764C /* SampleApplicationSession.mm in Sources */,
+				B3DD9E031C724709002CD77A /* Card.swift in Sources */,
 				B3AC8ACF1C512D9600E1B297 /* main.m in Sources */,
 				B35FA6E71C5A621A00525812 /* PageContentViewController.swift in Sources */,
 				B3B58B271C490442007D4B29 /* TurnViewController.swift in Sources */,
@@ -690,6 +744,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -715,6 +770,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;

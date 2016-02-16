@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -92,7 +93,7 @@
                             <constraint firstItem="Bi5-eh-YCk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ALW-up-Mdw"/>
                             <constraint firstItem="scT-am-4D8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dnc-4P-rmF"/>
                             <constraint firstItem="scT-am-4D8" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Geh-F1-7D9"/>
-                            <constraint firstItem="Bi5-eh-YCk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="V6v-p8-zXG"/>
+                            <constraint firstItem="Bi5-eh-YCk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="300" id="V6v-p8-zXG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -102,9 +103,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fox_cl_xxhdpi" width="106" height="106"/>
-        <image name="lama_cl_xxhdpi" width="106" height="106"/>
-        <image name="lion_cl_xxhdpi" width="106" height="106"/>
+        <image name="fox_cl_xxhdpi" width="250" height="250"/>
+        <image name="lama_cl_xxhdpi" width="250" height="250"/>
+        <image name="lion_cl_xxhdpi" width="250" height="250"/>
         <image name="logo" width="1200" height="331"/>
         <image name="parrot_cl_xxhdpi" width="106" height="106"/>
         <image name="wolf_cl_xxhdpi" width="106" height="106"/>

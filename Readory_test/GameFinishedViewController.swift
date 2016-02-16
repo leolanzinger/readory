@@ -17,9 +17,9 @@ class GameFinishedViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        score = Game.sharedInstance.score
-        n_players = Game.sharedInstance.players
-        image_array = Game.sharedInstance.imageNames
+        score = Game.swiftSharedInstance.score
+        n_players = Game.swiftSharedInstance.players
+        image_array = Game.swiftSharedInstance.imageNames
         
         
     }

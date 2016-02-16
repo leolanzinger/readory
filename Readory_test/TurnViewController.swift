@@ -16,8 +16,8 @@ class TurnViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // append the player that is about to play the turn
-        playerName.text = String(Game.sharedInstance.playerNames[Game.sharedInstance.playingPlayer - 1])
-        playerImage.image = UIImage(named:Game.sharedInstance.imageNames[Game.sharedInstance.playingPlayer - 1])!
+        playerName.text = String(Game.swiftSharedInstance.playerNames[Game.swiftSharedInstance.playingPlayer - 1])
+        playerImage.image = UIImage(named:Game.swiftSharedInstance.imageNames[Game.swiftSharedInstance.playingPlayer - 1])!
     }
 
     override func didReceiveMemoryWarning() {

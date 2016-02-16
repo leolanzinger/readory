@@ -10,6 +10,7 @@
 #import "FrameMarkersEAGLView.h"
 #import "SampleApplicationSession.h"
 #import <QCAR/DataSet.h>
+#import "Game.h"
 
 @interface FrameMarkersViewController : UIViewController <SampleApplicationControl> {
     
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) FrameMarkersEAGLView* eaglView;
 @property (nonatomic, strong) SampleApplicationSession * vapp;
 @property (nonatomic, strong) UITapGestureRecognizer * tapGestureRecognizer;
+@property (nonatomic, strong) GameWrapper * game;
 
 -(void)handleSuccessPick;
 -(void)handleFailPick;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cards>
+    <card id="0" front="0" back="10" hint="0" corresponding="5"></card>
+    <card id="1" front="2" back="12" hint="1" corresponding="6"></card>
+    <card id="2" front="4" back="14" hint="2" corresponding="7"></card>
+    <card id="3" front="6" back="16" hint="3" corresponding="8"></card>
+    <card id="4" front="8" back="18" hint="4" corresponding="9"></card>
+    <card id="5" front="1" back="11" hint="0" corresponding="0"></card>
+    <card id="6" front="3" back="13" hint="1" corresponding="1"></card>
+    <card id="7" front="5" back="15" hint="2" corresponding="2"></card>
+    <card id="8" front="7" back="17" hint="3" corresponding="3"></card>
+    <card id="9" front="9" back="19" hint="4" corresponding="4"></card>
+</cards>
