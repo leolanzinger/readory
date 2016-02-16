@@ -34,4 +34,8 @@
     return [self.game getFirstMarkerModel];
 }
 
+- (int)getModelFromMark:(int)marker_id {
+    return [self.game getModelFromMarker:marker_id];
+}
+
 @end

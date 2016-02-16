@@ -205,6 +205,23 @@ namespace {
 
 - (void) setup3dObjects
 {
+    // import the game shared instance
+    self.game = [[GameWrapper alloc] init];
+    
+    // init the turn object
+    self.turnWrapper = [[TurnWrapper alloc] init];
+    
+    
+    // load the object parser
+    ObjParser* objParser = [[ObjParser alloc] init];
+    // load programmatically obj files
+    NSString *url = [self.game getFirstMod];
+    VuforiaObject3D *parsedObj = [[VuforiaObject3D alloc]init];
+    parsedObj = [objParser loadObject:url];
+    parsedObj.texture = augmentationTexture[1];
+    
+    [objects3D addObject:parsedObj];
+    
     // build the array of objects we want drawn and their texture
     // in this example we have 4 textures and 4 objects - Q, C, A, R
     
@@ -212,33 +229,7 @@ namespace {
                      with:NUM_Q_OBJECT_INDEX ofIndices:QobjectIndices usingTextureIndex:0];
     
     [self add3DObjectWith:NUM_C_OBJECT_VERTEX ofVertices:CobjectVertices normals:CobjectNormals texcoords:CobjectTexCoords
-                     with:NUM_C_OBJECT_INDEX ofIndices:CobjectIndices usingTextureIndex:1]; /*
-    
-    [self add3DObjectWith:NUM_A_OBJECT_VERTEX ofVertices:AobjectVertices normals:AobjectNormals texcoords:AobjectTexCoords
-                     with:NUM_A_OBJECT_INDEX ofIndices:AobjectIndices usingTextureIndex:2];
-    
-    [self add3DObjectWith:NUM_R_OBJECT_VERTEX ofVertices:RobjectVertices normals:RobjectNormals texcoords:RobjectTexCoords
-                     with:NUM_R_OBJECT_INDEX ofIndices:RobjectIndices usingTextureIndex:3];
-    
-    [self add3DObjectWith:NUM_TEAPOT_OBJECT_VERTEX ofVertices:teapotVertices normals:teapotNormals texcoords:teapotTexCoords
-                     with:NUM_TEAPOT_OBJECT_INDEX ofIndices:teapotIndices usingTextureIndex:4];
-     */
-    
-    
-    // import the game shared instance
-    self.game = [[GameWrapper alloc] init];
-    
-    // load the object parser
-    self.objParser = [[ObjParser alloc] init];
-    
-    
-    // init the turn object
-    self.turnWrapper = [[TurnWrapper alloc] init];
-    
-    // load programmatically obj files
-    //NSString *url = [self.game getFirstMod];
-    //VuforiaObject3D *parsedObj = [self.objParser loadObject:url];
-    
+                     with:NUM_C_OBJECT_INDEX ofIndices:CobjectIndices usingTextureIndex:1];
 }
 
 - (void) setOffTargetTrackingMode:(BOOL) enabled {
@@ -345,28 +336,19 @@ namespace {
             if ([self.turnWrapper checkHint:marker.getMarkerId()]) {
                 // display the hint
                 VuforiaObject3D *obj3D = [[VuforiaObject3D alloc] init];
-                // if the hint is the right card let's display 'C'
-                /*if ([turnWrapper findCorrectHint:marker.getMarkerId()]) {
-                   //obj3D  = [objects3D objectAtIndex:1];
-                    
-                    NSLog(@"tracked correct hint marker");
-                    
-                    //blender object
-                    BlenderExportedObject object = text_001Object;
-                    
-                    obj3D.numVertices = object.numVertices;
-                    obj3D.vertices = object.vertices;
-                    obj3D.normals = object.normals;
-                    obj3D.texCoords = object.texCoords;
-                    obj3D.numIndices = object.numIndices;
-                    obj3D.indices = object.indices;
-                    obj3D.texture = augmentationTexture[1];
-                }
-                // else display 'Q'
-                else {*/
+
+                // get the model id based on the marker
+                int model_id = [self.game getModelFromMark:marker.getMarkerId()];
+
+                // display the hint TODO:fix this and make it dynamic
+//                if (model_id == 0) {
                     obj3D = [objects3D objectAtIndex:0];
-                //}
-                
+  /*              }
+                // else display 'Q'
+                else {
+                    obj3D = [objects3D objectAtIndex:1];
+                }
+    */            
                 // Render with OpenGL 2
                 QCAR::Matrix44F modelViewProjection;
                 if (isFrontCamera) {

@@ -59,9 +59,6 @@ static const int kNumAugmentationTextures = 2;
 // game wrapper
 @property (nonatomic, strong) GameWrapper *game;
 
-// object parser
-@property (nonatomic, strong) ObjParser *objParser;
-
 - (id)initWithFrame:(CGRect)frame appSession:(SampleApplicationSession *) app;
 
 - (void)setVC:(UIViewController*)vc_object;

@@ -12,9 +12,7 @@
 @interface ObjParser : NSObject
 
 @property NSString* fileRoot;
-@property VuforiaObject3D* object;
 
--(id) init;
 -(VuforiaObject3D*) loadObject: (NSString*) url;
 
 @end

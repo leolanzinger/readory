@@ -141,4 +141,10 @@ import Foundation
         let model = self.cards[0].get3dModel(turn_types[turn_type])
         return model
     }
+    
+    // get the model index depending on the marker
+    func getModelFromMarker(marker_id: Int) -> Int {
+        let c = self.cards.filter{$0.back_marker! == marker_id}.first!
+        return c.hint
+    }
 }

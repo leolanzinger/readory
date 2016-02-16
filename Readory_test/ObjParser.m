@@ -25,51 +25,49 @@
 
 @implementation ObjParser
 
-- (id)init {
-    self = [super init];
-    return self;
-}
-
 - (VuforiaObject3D*)loadObject: (NSString*) url {
     
     // initialize vuforia object
-    self.object = [[VuforiaObject3D alloc] init];
+    VuforiaObject3D* object = [[VuforiaObject3D alloc] init];
     
     // read from file
     self.fileRoot = [[NSBundle mainBundle]
                 pathForResource:url ofType:@"obj"];
-    NSString* fileContents =
-    [NSString stringWithContentsOfFile:self.fileRoot
-                              encoding:NSUTF8StringEncoding error:nil];
+    NSError* error = nil;
+    NSString *objData = [NSString stringWithContentsOfFile:self.fileRoot
+                                                        encoding:NSUTF8StringEncoding
+                                                        error:&error];
     
-    // first, separate by new line
-    NSArray* allLinedStrings =
-    [fileContents componentsSeparatedByCharactersInSet:
-     [NSCharacterSet newlineCharacterSet]];
+    if(error) { // If error object was instantiated, handle it.
+        NSLog(@"ERROR while loading from file: %@", error);
+    }
     
-    
-    NSString *objData = [NSString stringWithContentsOfFile:self.fileRoot];
-    NSUInteger vertexCount = 0, faceCount = 0;
+    NSUInteger vertexCount = 0, faceCount = 0, vtCount = 0, vnCount = 0;
     // Iterate through file once to discover how many vertices, normals, and faces there are
     NSArray *lines = [objData componentsSeparatedByString:@"\n"];
     for (NSString * line in lines)
     {
         if ([line hasPrefix:@"v "])
             vertexCount++;
+        else if ([line hasPrefix:@"vt "])
+            vtCount++;
+        else if ([line hasPrefix:@"vn "])
+            vnCount ++;
         else if ([line hasPrefix:@"f "])
             faceCount++;
     }
     
     // set everything to vuforia object
-    self.object.numVertices = vertexCount;
+    object.numVertices = vertexCount;
+    object.numIndices = faceCount;
     
-    float* vert = malloc(self.object.numVertices * 3);
-    float* norm = malloc(self.object.numVertices * 3);
-    float* text = malloc(self.object.numVertices * 2);
+    float* vert = malloc(sizeof(float) * object.numVertices * 3);
+    float* norm = malloc(sizeof(float) * vnCount * 3);
+    float* text = malloc(sizeof(float) * vtCount * 3);
+    short* indices = malloc(sizeof(short) * faceCount * 3);
     vertexCount = 0;
     int normCount = 0;
     int textCount = 0;
-    int faces[faceCount][9];
     faceCount = 0;
     
     for (NSString * line in lines)
@@ -107,55 +105,51 @@
             text[textCount] = [[lineVertices objectAtIndex:2] floatValue];
             textCount++;
         }
-        // set faceselse
-        if ([line hasPrefix:@"f "]) {
+        // set faces
+        else if ([line hasPrefix:@"f "]) {
             NSString *lineTrunc = [line substringFromIndex:2];
             NSArray *faceIndexGroups = [lineTrunc componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            /*
-            // Unrolled loop, a little ugly but functional
-             
-            From the WaveFront OBJ specification:
-            o       The first reference number is the geometric vertex.
-            o       The second reference number is the texture vertex. It follows the first slash.
-            o       The third reference number is the vertex normal. It follows the second slash.
-            */
+
             NSString *oneGroup = [faceIndexGroups objectAtIndex:0];
             NSArray *groupPartsOne = [oneGroup componentsSeparatedByString:@"/"];
-            faces[faceCount][0] = [[groupPartsOne  objectAtIndex:0] integerValue];
-            faces[faceCount][1] = [[groupPartsOne  objectAtIndex:1] integerValue];
-            faces[faceCount][2] = [[groupPartsOne  objectAtIndex:2] integerValue];
+            indices[faceCount] = [[groupPartsOne  objectAtIndex:0] integerValue];
+            //faces[faceCount][0] = [[groupPartsOne  objectAtIndex:0] integerValue];
+            //faces[faceCount][1] = [[groupPartsOne  objectAtIndex:1] integerValue];
+            //faces[faceCount][2] = [[groupPartsOne  objectAtIndex:2] integerValue];
+            faceCount++;
             
             NSString *twoGroup = [faceIndexGroups objectAtIndex:1];
             NSArray *groupPartsTwo = [twoGroup componentsSeparatedByString:@"/"];
-            faces[faceCount][3] = [[groupPartsTwo  objectAtIndex:0] integerValue];
-            faces[faceCount][4] = [[groupPartsTwo  objectAtIndex:1] integerValue];
-            faces[faceCount][5] = [[groupPartsTwo  objectAtIndex:2] integerValue];
+            indices[faceCount] = [[groupPartsTwo  objectAtIndex:0] integerValue];
+            //faces[faceCount][3] = [[groupPartsTwo  objectAtIndex:0] integerValue];
+            //faces[faceCount][4] = [[groupPartsTwo  objectAtIndex:1] integerValue];
+            //faces[faceCount][5] = [[groupPartsTwo  objectAtIndex:2] integerValue];
+            faceCount++;
             
             NSString *threeGroup = [faceIndexGroups objectAtIndex:2];
             NSArray *groupPartsThree = [threeGroup componentsSeparatedByString:@"/"];
-            faces[faceCount][6] = [[groupPartsThree  objectAtIndex:0] integerValue];
-            faces[faceCount][7] = [[groupPartsThree  objectAtIndex:1] integerValue];
-            faces[faceCount][8] = [[groupPartsThree  objectAtIndex:2] integerValue];
-            
+            indices[faceCount] = [[groupPartsThree  objectAtIndex:0] integerValue];
+            //faces[faceCount][6] = [[groupPartsThree  objectAtIndex:0] integerValue];
+            //faces[faceCount][7] = [[groupPartsThree  objectAtIndex:1] integerValue];
+            //faces[faceCount][8] = [[groupPartsThree  objectAtIndex:2] integerValue];
             faceCount++;
         }
     }
     
     // check if texture coords is empty populate it with 0
     if (textCount == 0) {
-        for (int i = 0; i < self.object.numVertices*2; i++) {
+        for (int i = 0; i < textCount; i++) {
             text[i] = 0;
         }
     }
     
     // store into object
-    self.object.vertices = vert;
-    self.object.normals = norm;
-    self.object.texCoords = text;
+    object.vertices = vert;
+    object.normals = norm;
+    object.texCoords = text;
+    object.indices = indices;
     
-    
-    
-    return self.object;
+    return object;
 }
 
 @end

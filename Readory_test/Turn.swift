@@ -33,7 +33,6 @@ import Foundation
         by the viewController.
     */
     func checkCard(m_id :Int) -> Int{
-        let cards = g.cards
         let pl_card = g.findCardFromMarker(m_id, marker_type: "front")
         if (self.firstCard == nil && self.secondCard == nil && !g.played_cards.contains(pl_card)) {
             self.firstCard = pl_card

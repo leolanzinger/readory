@@ -18,5 +18,6 @@
 -(NSString*) getTurnType;
 -(int) getLowestBackMark;
 -(NSString*) getFirstMod;
+-(int) getModelFromMark:(int)marker_id;
 
 @end
