@@ -46,7 +46,10 @@ static const int kNumAugmentationTextures = 2;
     
     // Texture used when rendering augmentation
     Texture* augmentationTexture[kNumAugmentationTextures];
-    NSMutableArray *objects3D;  // objects to draw
+    NSMutableArray *objects3D_misspelling;  // objects to draw
+    NSMutableArray *objects3D_translation;
+    NSMutableArray *objects3D_association;
+    NSMutableArray *objects3D_synonym;
     
     BOOL offTargetTrackingEnabled;
 }

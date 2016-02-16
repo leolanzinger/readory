@@ -29,7 +29,7 @@
     
     // initialize vuforia object
     VuforiaObject3D* object = [[VuforiaObject3D alloc] init];
-    
+
     // read from file
     self.fileRoot = [[NSBundle mainBundle]
                 pathForResource:url ofType:@"obj"];
@@ -64,7 +64,7 @@
     float* vert = malloc(sizeof(float) * object.numVertices * 3);
     float* norm = malloc(sizeof(float) * vnCount * 3);
     float* text = malloc(sizeof(float) * vtCount * 3);
-    short* indices = malloc(sizeof(short) * faceCount * 3);
+    short* indices = malloc(sizeof(short) * faceCount * 9);
     vertexCount = 0;
     int normCount = 0;
     int textCount = 0;
@@ -117,6 +117,10 @@
             //faces[faceCount][1] = [[groupPartsOne  objectAtIndex:1] integerValue];
             //faces[faceCount][2] = [[groupPartsOne  objectAtIndex:2] integerValue];
             faceCount++;
+            indices[faceCount] = [[groupPartsOne  objectAtIndex:1] integerValue];
+            faceCount++;
+            indices[faceCount] = [[groupPartsOne  objectAtIndex:2] integerValue];
+            faceCount++;
             
             NSString *twoGroup = [faceIndexGroups objectAtIndex:1];
             NSArray *groupPartsTwo = [twoGroup componentsSeparatedByString:@"/"];
@@ -125,6 +129,10 @@
             //faces[faceCount][4] = [[groupPartsTwo  objectAtIndex:1] integerValue];
             //faces[faceCount][5] = [[groupPartsTwo  objectAtIndex:2] integerValue];
             faceCount++;
+            indices[faceCount] = [[groupPartsTwo  objectAtIndex:1] integerValue];
+            faceCount++;
+            indices[faceCount] = [[groupPartsTwo  objectAtIndex:2] integerValue];
+            faceCount++;
             
             NSString *threeGroup = [faceIndexGroups objectAtIndex:2];
             NSArray *groupPartsThree = [threeGroup componentsSeparatedByString:@"/"];
@@ -132,6 +140,10 @@
             //faces[faceCount][6] = [[groupPartsThree  objectAtIndex:0] integerValue];
             //faces[faceCount][7] = [[groupPartsThree  objectAtIndex:1] integerValue];
             //faces[faceCount][8] = [[groupPartsThree  objectAtIndex:2] integerValue];
+            faceCount++;
+            indices[faceCount] = [[groupPartsThree  objectAtIndex:1] integerValue];
+            faceCount++;
+            indices[faceCount] = [[groupPartsThree  objectAtIndex:2] integerValue];
             faceCount++;
         }
     }
@@ -148,7 +160,7 @@
     object.normals = norm;
     object.texCoords = text;
     object.indices = indices;
-    
+
     return object;
 }
 

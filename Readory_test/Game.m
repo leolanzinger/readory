@@ -38,4 +38,8 @@
     return [self.game getModelFromMarker:marker_id];
 }
 
+- (int)getCurrentTurnIn {
+    return [self.game getCurrentTurnIndex];
+}
+
 @end

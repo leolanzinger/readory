@@ -6,7 +6,7 @@
 #ifndef _BLENDER_EXPORT_OBJECT_STRUCT_
 #define _BLENDER_EXPORT_OBJECT_STRUCT_
 
-struct BlenderExportedObject{
+struct StarObject{
     
     unsigned int numVertices;
     const float *vertices;
@@ -50,7 +50,7 @@ static const float text_001Transform[ 16 ] = {
     
 };
 
-static const BlenderExportedObject text_001Object = {
+static const StarObject text_001Object = {
     NUM_TEXT_001_OBJECT_VERTEX,
     text_001Vertices,
     text_001Normals,

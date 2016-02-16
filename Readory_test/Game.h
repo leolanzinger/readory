@@ -19,5 +19,6 @@
 -(int) getLowestBackMark;
 -(NSString*) getFirstMod;
 -(int) getModelFromMark:(int)marker_id;
+-(int) getCurrentTurnIn;
 
 @end

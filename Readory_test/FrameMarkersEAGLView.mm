@@ -30,6 +30,11 @@
 #import "Turn.h"
 #import "ObjParser.h"
 
+#import "sun_miss.h"
+#import "sun_tran.h"
+#import "sun_asso.h"
+#import "sun_syn.h"
+
 //******************************************************************************
 // *** OpenGL ES thread safety ***
 //
@@ -108,7 +113,10 @@ namespace {
             [self setContentScaleFactor:2.0f];
         }
         
-        objects3D = [[NSMutableArray alloc] initWithCapacity:4];
+        objects3D_misspelling = [[NSMutableArray alloc] initWithCapacity:10];
+        objects3D_translation = [[NSMutableArray alloc] initWithCapacity:10];
+        objects3D_association = [[NSMutableArray alloc] initWithCapacity:10];
+        objects3D_synonym = [[NSMutableArray alloc] initWithCapacity:10];
         
         // Load the augmentation textures
         for (int i = 0; i < kNumAugmentationTextures; ++i) {
@@ -200,7 +208,7 @@ namespace {
     
     obj3D.texture = augmentationTexture[textureIndex];
     
-    [objects3D addObject:obj3D];
+    //[objects3D addObject:obj3D];
 }
 
 - (void) setup3dObjects
@@ -213,6 +221,7 @@ namespace {
     
     
     // load the object parser
+    /*
     ObjParser* objParser = [[ObjParser alloc] init];
     // load programmatically obj files
     NSString *url = [self.game getFirstMod];
@@ -220,16 +229,61 @@ namespace {
     parsedObj = [objParser loadObject:url];
     parsedObj.texture = augmentationTexture[1];
     
-    [objects3D addObject:parsedObj];
+    [objects3D addObject:parsedObj];*/
     
     // build the array of objects we want drawn and their texture
     // in this example we have 4 textures and 4 objects - Q, C, A, R
     
-    [self add3DObjectWith:NUM_Q_OBJECT_VERTEX ofVertices:QobjectVertices normals:QobjectNormals texcoords:QobjectTexCoords
+    /*[self add3DObjectWith:NUM_Q_OBJECT_VERTEX ofVertices:QobjectVertices normals:QobjectNormals texcoords:QobjectTexCoords
                      with:NUM_Q_OBJECT_INDEX ofIndices:QobjectIndices usingTextureIndex:0];
     
     [self add3DObjectWith:NUM_C_OBJECT_VERTEX ofVertices:CobjectVertices normals:CobjectNormals texcoords:CobjectTexCoords
-                     with:NUM_C_OBJECT_INDEX ofIndices:CobjectIndices usingTextureIndex:1];
+                     with:NUM_C_OBJECT_INDEX ofIndices:CobjectIndices usingTextureIndex:1];*/
+    
+    // add misspelling object
+    VuforiaObject3D *obj_0_misspelling = [[VuforiaObject3D alloc]init];
+    obj_0_misspelling.numVertices = marker_0_misspelling.numVertices;
+    obj_0_misspelling.vertices = marker_0_misspelling.vertices;
+    obj_0_misspelling.normals = marker_0_misspelling.normals;
+    obj_0_misspelling.texCoords = marker_0_misspelling.texCoords;
+    obj_0_misspelling.numIndices = marker_0_misspelling.numIndices;
+    obj_0_misspelling.indices = marker_0_misspelling.indices;
+    obj_0_misspelling.texture = augmentationTexture[1];
+    [objects3D_misspelling addObject:obj_0_misspelling];
+    
+    // add translation object
+    VuforiaObject3D *obj_0_translation = [[VuforiaObject3D alloc]init];
+    obj_0_translation.numVertices = marker_0_translation.numVertices;
+    obj_0_translation.vertices = marker_0_translation.vertices;
+    obj_0_translation.normals = marker_0_translation.normals;
+    obj_0_translation.texCoords = marker_0_translation.texCoords;
+    obj_0_translation.numIndices = marker_0_translation.numIndices;
+    obj_0_translation.indices = marker_0_translation.indices;
+    obj_0_translation.texture = augmentationTexture[1];
+    [objects3D_translation addObject:obj_0_translation];
+    
+    // add misspelling object
+    VuforiaObject3D *obj_0_association = [[VuforiaObject3D alloc]init];
+    obj_0_association.numVertices = marker_0_association.numVertices;
+    obj_0_association.vertices = marker_0_association.vertices;
+    obj_0_association.normals = marker_0_association.normals;
+    obj_0_association.texCoords = marker_0_association.texCoords;
+    obj_0_association.numIndices = marker_0_association.numIndices;
+    obj_0_association.indices = marker_0_association.indices;
+    obj_0_association.texture = augmentationTexture[1];
+    [objects3D_association addObject:obj_0_association];
+    
+    // add misspelling object
+    VuforiaObject3D *obj_0_synonym = [[VuforiaObject3D alloc]init];
+    obj_0_synonym.numVertices = marker_0_synonym.numVertices;
+    obj_0_synonym.vertices = marker_0_synonym.vertices;
+    obj_0_synonym.normals = marker_0_synonym.normals;
+    obj_0_synonym.texCoords = marker_0_synonym.texCoords;
+    obj_0_synonym.numIndices = marker_0_synonym.numIndices;
+    obj_0_synonym.indices = marker_0_synonym.indices;
+    obj_0_synonym.texture = augmentationTexture[1];
+    [objects3D_synonym addObject:obj_0_synonym];
+    
 }
 
 - (void) setOffTargetTrackingMode:(BOOL) enabled {
@@ -340,15 +394,21 @@ namespace {
                 // get the model id based on the marker
                 int model_id = [self.game getModelFromMark:marker.getMarkerId()];
 
-                // display the hint TODO:fix this and make it dynamic
-//                if (model_id == 0) {
-                    obj3D = [objects3D objectAtIndex:0];
-  /*              }
-                // else display 'Q'
-                else {
-                    obj3D = [objects3D objectAtIndex:1];
+                int turn_i = [self.game getCurrentTurnIn];
+                
+                if (turn_i == 0) {
+                    obj3D = [objects3D_misspelling objectAtIndex:0];
                 }
-    */            
+                else if (turn_i == 1) {
+                    obj3D = [objects3D_translation objectAtIndex:0];
+                }
+                else if (turn_i == 2) {
+                    obj3D = [objects3D_association objectAtIndex:0];
+                }
+                else if (turn_i == 3) {
+                    obj3D = [objects3D_synonym objectAtIndex:0];
+                }
+                
                 // Render with OpenGL 2
                 QCAR::Matrix44F modelViewProjection;
                 if (isFrontCamera) {

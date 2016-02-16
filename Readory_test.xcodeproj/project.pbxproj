@@ -129,6 +129,10 @@
 		B396CE6D1C4E583C007D41B3 /* SampleGLResourceHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleGLResourceHandler.h; sourceTree = "<group>"; };
 		B396CE6E1C4E5880007D41B3 /* FrameMarkersEAGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameMarkersEAGLView.h; sourceTree = "<group>"; };
 		B396CE6F1C4E58A6007D41B3 /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		B39FB1A11C73A3AF00795AD2 /* sun_miss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sun_miss.h; sourceTree = "<group>"; };
+		B39FB1A21C73A3AF00795AD2 /* sun_tran.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sun_tran.h; sourceTree = "<group>"; };
+		B39FB1A31C73A3AF00795AD2 /* sun_asso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sun_asso.h; sourceTree = "<group>"; };
+		B39FB1A41C73A3AF00795AD2 /* sun_syn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sun_syn.h; sourceTree = "<group>"; };
 		B3AC8A8C1C511B0100E1B297 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3AC8A8D1C511B2000E1B297 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3AC8ACE1C512D9600E1B297 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				B38E53961C5680FA000285B9 /* Q_object.h */,
 				B3E26E951C62B4B800B2199F /* star.h */,
 				B38E53971C568106000285B9 /* R_object.h */,
+				B39FB1A01C73A39300795AD2 /* hintmodels */,
 				B38E53B81C5824C0000285B9 /* Teapot.h */,
 				B38E53951C5680ED000285B9 /* C_object.h */,
 				B38E53921C5680A8000285B9 /* VuforiaObject3D.m */,
@@ -338,6 +343,17 @@
 				B38E53A91C568385000285B9 /* Texture.mm */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		B39FB1A01C73A39300795AD2 /* hintmodels */ = {
+			isa = PBXGroup;
+			children = (
+				B39FB1A11C73A3AF00795AD2 /* sun_miss.h */,
+				B39FB1A21C73A3AF00795AD2 /* sun_tran.h */,
+				B39FB1A31C73A3AF00795AD2 /* sun_asso.h */,
+				B39FB1A41C73A3AF00795AD2 /* sun_syn.h */,
+			);
+			name = hintmodels;
 			sourceTree = "<group>";
 		};
 		B3B58AE41C47ED97007D4B29 = {

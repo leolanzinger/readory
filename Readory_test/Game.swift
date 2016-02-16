@@ -136,6 +136,10 @@ import Foundation
         return turn_types[turn_type]
     }
     
+    func getCurrentTurnIndex() -> Int {
+        return turn_type;
+    }
+    
     // custom function TODO: UPDATE IT
     func getFirstMarkerModel() -> NSString {
         let model = self.cards[0].get3dModel(turn_types[turn_type])
