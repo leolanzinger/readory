@@ -70,6 +70,7 @@ static const int kNumAugmentationTextures = 2;
 - (void)freeOpenGLESResources;
 - (void)correctTurn;
 - (void)wrongTurn;
+- (void)loadHints;
 
 @end
 
