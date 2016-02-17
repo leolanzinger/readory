@@ -18,12 +18,14 @@ class TurnSuccessViewController: UIViewController {
         super.viewDidLoad()
         // update the score
         finish = Game.swiftSharedInstance.turnWon()
+        if (finish) {
+            turnLabel.text = "CORRECT ANSWER!"
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(false)
         if (finish) {
-            turnLabel.text = "CORRECT ANSWER!"
             // wait two seconds
             let delay = 2 * Double(NSEC_PER_SEC)
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))

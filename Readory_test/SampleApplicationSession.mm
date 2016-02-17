@@ -261,6 +261,12 @@ namespace {
 - (CGSize)getCurrentARViewBoundsSize
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
+
+    CGPoint new_origin_point = screenBounds.origin;
+    new_origin_point.y = new_origin_point.y;// + 180;
+    screenBounds.origin = new_origin_point;
+    screenBounds.size.height = screenBounds.size.height;// - 180;
+
     CGSize viewSize = screenBounds.size;
     
     // If this device has a retina display, scale the view bounds
@@ -473,7 +479,7 @@ namespace {
     
     // Calculate the viewport for the app to use when rendering
     viewport.posX = ((viewWidth - config.mSize.data[0]) / 2) + config.mPosition.data[0];
-    viewport.posY = (((int)(viewHeight - config.mSize.data[1])) / (int) 2) + config.mPosition.data[1];
+    viewport.posY = (((int)(viewHeight - config.mPosition.data[1])) / (int) 2) + config.mPosition.data[1];
     viewport.sizeX = config.mSize.data[0];
     viewport.sizeY = config.mSize.data[1];
     

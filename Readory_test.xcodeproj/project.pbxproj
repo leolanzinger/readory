@@ -32,6 +32,7 @@
 		B396CE591C4E441B007D41B3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B396CE581C4E441B007D41B3 /* Game.swift */; };
 		B396CE651C4E5726007D41B3 /* libVuforia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B396CE641C4E5726007D41B3 /* libVuforia.a */; };
 		B396CE6B1C4E57F8007D41B3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B396CE6A1C4E57F8007D41B3 /* OpenGLES.framework */; };
+		B39FB1D01C75268300795AD2 /* orange_texture.png in Resources */ = {isa = PBXBuildFile; fileRef = B39FB1CF1C75268300795AD2 /* orange_texture.png */; };
 		B3AC8A8E1C511B2000E1B297 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AC8A8D1C511B2000E1B297 /* AppDelegate.m */; };
 		B3AC8ACF1C512D9600E1B297 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AC8ACE1C512D9600E1B297 /* main.m */; };
 		B3AC8AD11C512E4100E1B297 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3AC8AD01C512E4100E1B297 /* Foundation.framework */; };
@@ -139,6 +140,7 @@
 		B39FB1C61C74CD6D00795AD2 /* hint_6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hint_6.h; sourceTree = "<group>"; };
 		B39FB1C81C74CDB900795AD2 /* hint_8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hint_8.h; sourceTree = "<group>"; };
 		B39FB1CC1C74CE0200795AD2 /* hint_9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hint_9.h; sourceTree = "<group>"; };
+		B39FB1CF1C75268300795AD2 /* orange_texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_texture.png; sourceTree = "<group>"; };
 		B3AC8A8C1C511B0100E1B297 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3AC8A8D1C511B2000E1B297 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B3AC8ACE1C512D9600E1B297 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				B38E53A01C568249000285B9 /* letter_A.png */,
 				B38E53B91C582B29000285B9 /* TextureTeapotRed.png */,
 				B38E53A11C568249000285B9 /* letter_C.png */,
+				B39FB1CF1C75268300795AD2 /* orange_texture.png */,
 				B38E53A21C568249000285B9 /* letter_Q.png */,
 				B3B189891C637CCD007CB9F8 /* blue_texture.png */,
 				B38E53A31C568249000285B9 /* letter_R.png */,
@@ -564,6 +567,7 @@
 				B38E53B11C577F65000285B9 /* Simple.fragsh in Resources */,
 				B38E53B21C577F65000285B9 /* Simple.vertsh in Resources */,
 				B38E53A61C568249000285B9 /* letter_Q.png in Resources */,
+				B39FB1D01C75268300795AD2 /* orange_texture.png in Resources */,
 				B38E53AF1C577F65000285B9 /* Line.fragsh in Resources */,
 				B38E53A71C568249000285B9 /* letter_R.png in Resources */,
 			);

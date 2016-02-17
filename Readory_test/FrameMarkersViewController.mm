@@ -17,6 +17,7 @@
 #import "Game.h"
 
 @interface FrameMarkersViewController ()
+@property (weak, nonatomic) IBOutlet UIView *ARView;
 
 //@property (weak, nonatomic) IBOutlet UIImageView *ARViewPlaceholder;
 
@@ -29,6 +30,15 @@
 - (CGRect)getCurrentARViewFrame
 {
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    
+    //CGRect screenBounds = [self.ARView bounds];
+    
+    //change screen bounds to leave an empty 80 frame at top
+    CGPoint new_origin_point = screenBounds.origin;
+    new_origin_point.y = new_origin_point.y + 180;
+    screenBounds.origin = new_origin_point;
+    screenBounds.size.height = screenBounds.size.height - 180;
+    
     CGRect viewFrame = screenBounds;
     
     // If this device has a retina display, scale the view bounds
@@ -62,6 +72,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 }
 
 - (void)loadView
@@ -182,33 +193,6 @@
             return NO;
         }
     }
-    // Create frame markers: - put them into an xml file
-    /*
-    if (!markerTracker->createFrameMarker(0, "Marker0", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(1, "Marker1", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(2, "Marker2", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(3, "Marker3", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(4, "Marker4", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(5, "Marker5", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(6, "Marker6", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(7, "Marker7", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(8, "Marker8", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(9, "Marker9", QCAR::Vec2F(50,50))  ||
-        !markerTracker->createFrameMarker(10, "Marker10", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(11, "Marker11", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(12, "Marker12", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(13, "Marker13", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(14, "Marker14", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(15, "Marker15", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(16, "Marker16", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(17, "Marker17", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(18, "Marker18", QCAR::Vec2F(50,50)) ||
-        !markerTracker->createFrameMarker(19, "Marker19", QCAR::Vec2F(50,50)))
-    {
-        NSLog(@"Failed to create frame markers.");
-        return NO;
-    }*/
-    
     return YES;
 }
 

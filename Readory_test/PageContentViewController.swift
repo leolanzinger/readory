@@ -16,7 +16,7 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var onBoardingStack: UIStackView!
     @IBOutlet weak var onBoardingLabel: UILabel!
     
-    var pageIndex: Int?
+    var pageIndex: Int!
     var titleText : String!
     var imageName : String!
     var ok_button : UIButton!

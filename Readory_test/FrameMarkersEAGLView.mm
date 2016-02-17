@@ -57,12 +57,13 @@ namespace {
     // --- Data private to this unit ---
     // Letter object scale factor and translation
     const float kLetterScale = 25.0f;
-    const float kLetterTranslate = 25.0f;
+    const float kLetterTranslateX = 25.0f;
+    const float kLetterTranslateY = 5.0f;
     
     // Texture filenames
     const char* textureFilenames[] = {
         "letter_Q.png",
-        "blue_texture.png"/*,
+        "orange_texture.png"/*,
         "letter_A.png",
         "letter_R.png",
         "TextureTeapotRed.png"*/
@@ -371,8 +372,9 @@ namespace {
                 if (isFrontCamera) {
                     SampleApplicationUtils::scalePoseMatrix(-1, 1, 1, &modelViewMatrix.data[0]);
                 }
-                SampleApplicationUtils::translatePoseMatrix(-kLetterTranslate, -kLetterTranslate, 0.f, &modelViewMatrix.data[0]);
+                SampleApplicationUtils::translatePoseMatrix(-kLetterTranslateX, -kLetterTranslateY, 0.f, &modelViewMatrix.data[0]);
                 SampleApplicationUtils::scalePoseMatrix(kLetterScale, kLetterScale, kLetterScale, &modelViewMatrix.data[0]);
+                SampleApplicationUtils::rotatePoseMatrix(45.0, 1, 0, 0, &modelViewMatrix.data[0]);
                 SampleApplicationUtils::multiplyMatrix(&vapp.projectionMatrix.data[0], &modelViewMatrix.data[0], &modelViewProjection.data[0]);
                 
                 glUseProgram(shaderProgramID);

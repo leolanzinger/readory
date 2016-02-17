@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oQp-vG-Xa9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oQp-vG-Xa9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -804,10 +804,59 @@
                     <view key="view" contentMode="scaleToFill" id="Ukq-T1-Nda">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2Y-OW-icx">
+                                <rect key="frame" x="74" y="20" width="400" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lama_cl_xxhdpi" translatesAutoresizingMaskIntoConstraints="NO" id="3d3-FE-90h">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="jrs-QK-bCl"/>
+                                            <constraint firstAttribute="width" constant="80" id="oeP-eJ-bhW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LAMA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hts-LI-7ay">
+                                        <rect key="frame" x="80" y="0.0" width="187" height="80"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="MISSPELLING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqW-8y-aC0">
+                                        <rect key="frame" x="267" y="0.0" width="133" height="80"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Prd-qA-fIi"/>
+                                    <constraint firstItem="Hts-LI-7ay" firstAttribute="centerY" secondItem="u2Y-OW-icx" secondAttribute="centerY" id="cqB-is-cjh"/>
+                                    <constraint firstAttribute="width" constant="400" id="oL6-yd-5iX"/>
+                                    <constraint firstItem="Hts-LI-7ay" firstAttribute="leading" secondItem="3d3-FE-90h" secondAttribute="trailing" constant="10" id="pzP-fb-gXI"/>
+                                    <constraint firstItem="3d3-FE-90h" firstAttribute="centerY" secondItem="u2Y-OW-icx" secondAttribute="centerY" id="ryk-LD-EV1"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-px-KGf">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="CSb-xz-pv7"/>
+                                    <constraint firstAttribute="height" constant="400" id="L7g-nH-IDk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="lI7-px-KGf" firstAttribute="centerY" secondItem="Ukq-T1-Nda" secondAttribute="centerY" id="D6T-OQ-WyG"/>
+                            <constraint firstItem="lI7-px-KGf" firstAttribute="centerX" secondItem="Ukq-T1-Nda" secondAttribute="centerX" id="R8V-ti-JPy"/>
+                            <constraint firstItem="u2Y-OW-icx" firstAttribute="top" secondItem="LqJ-7X-AMy" secondAttribute="bottom" id="bKu-42-nWx"/>
+                            <constraint firstItem="u2Y-OW-icx" firstAttribute="centerX" secondItem="Ukq-T1-Nda" secondAttribute="centerX" id="m9L-ac-g97"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="ARView" destination="lI7-px-KGf" id="4hO-Uc-Fqa"/>
                         <segue destination="nud-7X-gid" kind="showDetail" identifier="nextTurnSuccessSegue" id="fhk-3d-PtP"/>
                         <segue destination="6qB-M3-X4a" kind="showDetail" identifier="nextTurnFailSegue" id="cRB-iN-wm3"/>
                     </connections>
@@ -895,15 +944,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fox_bw_xxhdpi" width="106" height="106"/>
+        <image name="fox_bw_xxhdpi" width="250" height="250"/>
         <image name="fox_cl_xxhdpi" width="250" height="250"/>
-        <image name="lama_cl_xxhdpi" width="106" height="106"/>
-        <image name="lion_bw_xxhdpi" width="106" height="106"/>
-        <image name="lion_cl_xxhdpi" width="106" height="106"/>
-        <image name="parrot_bw_xxhdpi" width="106" height="106"/>
-        <image name="parrot_cl_xxhdpi" width="106" height="106"/>
-        <image name="wolf_bw_xxhdpi" width="106" height="106"/>
-        <image name="wolf_cl_xxhdpi" width="106" height="106"/>
+        <image name="lama_cl_xxhdpi" width="250" height="250"/>
+        <image name="lion_bw_xxhdpi" width="250" height="250"/>
+        <image name="lion_cl_xxhdpi" width="250" height="250"/>
+        <image name="parrot_bw_xxhdpi" width="250" height="250"/>
+        <image name="parrot_cl_xxhdpi" width="250" height="250"/>
+        <image name="wolf_bw_xxhdpi" width="250" height="250"/>
+        <image name="wolf_cl_xxhdpi" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZmR-Uk-mqV"/>
